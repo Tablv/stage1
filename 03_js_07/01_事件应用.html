@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件应用</title>
+	<style>
+	#p1{
+		width:500px;
+		height:200px;
+		background:red;
+	}
+	</style>
+</head>
+<body onload="console.log('加载完成')">
+	<input type="button" value="按钮1" onclick="alert('点击按钮1');";>
+	<input type="button" value="生成一个四行的有序列表">
+	<div class="box"></div>
+
+	<p id="p1"></p>
+	<script>
+	var bnt_list_obj = document.querySelectorAll("input[type=button]");
+	console.log(bnt_list_obj);
+	bnt_list_obj[1].onclick = function(){
+		var box_obj = document.querySelector(".box");
+		box_obj.innerHTML = createList();
+		box_obj.style.background = "#00DFFB";
+	}
+
+	//封装一个函数：生成一个四行的有序列表，
+	//显示到box的盒子里
+	function createList(){
+		//存储有序列表
+		var list = "<ol>";
+		for(var i =1;i<=4;i++){
+			list += "<li>"+i+"</li>"
+		}
+		return list += "</ol>";
+
+	}
+
+	var p_obj = document.getElementById("p1");
+	p_obj.onclick = function(){
+		p_obj.style.background = "blue";
+	}
+	
+	</script>
+
+	
+
+
+
+
+
+
+
+
+	<hr>
+
+
+
+
+
+
+
+
+	<input type="text" name="uname" 
+	onfocus="console.log('获得焦点')" 
+	onblur="console.log('失去焦点')" 
+	onchange="console.log('改变内容')"
+	oninput = "console.log('正在输入内容')">
+	<!-- 
+		onchange:内容改变，失去焦点才会触发
+	 -->
+	<select name="" id="" onchange="console.log('选项改变了');">
+		
+		<option value="">图书</option>
+		<option value="">电器</option>
+		<option value="">游戏机</option>
+		<option value="">手机</option>
+	</select>
+</body>
+</html>

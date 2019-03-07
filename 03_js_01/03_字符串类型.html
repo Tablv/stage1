@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<font color="red">我来自中国<br>我学习汉语</font>
+	<script>
+	 //1)声明了字符串变量
+		var str1 = "<font color='blue'>我来自中国</font>";
+		var str2 = '我学习汉语';
+	 //2)输出到浏览器里
+	    document.write("<br>")
+		document.write(str1);
+		document.write("<hr>")
+		document.write(str2);
+
+	//练习:输出一个4行的无序列表
+	//在字符串里不允许换行
+		document.write("<ul type='circle'><li>无序列表</li><li>无序列表</li><li>无序列表</li><li>无序列表</li></ul>");
+		
+		var aa = "无'序列'表"
+		console.log(aa);
+	
+		var bb = '无"序列"表'
+		console.log(bb);
+
+		//转义字符
+		var cc = "无\"序列\"表"
+		console.log(cc);
+
+		var dd = '无\'序列\'表'
+		console.log(dd);
+	</script>
+</body>
+</html>

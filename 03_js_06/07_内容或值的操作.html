@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		form span{
+			height:18px;
+			width:150px;
+			border:1px solid red;
+			display:inline-block;
+		}
+	</style>
+</head>
+<body>
+<form action="">
+	<p>
+		用户名：<input type="text" name="uname">
+		<span></span>
+	</p>
+	<p>
+		密码：<input type="password" name="upass">
+		<span></span>
+	</p>
+	<p>
+		<input type="submit">
+	</p>
+</form>
+	<script>
+	//用户名失去焦点：开始验证，提示信息：显示在span中
+	//失去焦点(事件属性)：onblur
+	
+	var uname_obj = document.querySelector("input[name=uname]");
+	var span_list_obj = document.querySelectorAll("span");
+	console.log(span_list_obj);
+	console.log(uname_obj);
+	//失去焦点时，开始验证用户名
+	uname_obj.onblur = function(){
+		//如果用户名有@符号，要提示不能包含
+		if (uname_obj.value.indexOf("@") != -1) {
+			span_list_obj[0].innerHTML = "<font color='red'>不合法，不能含有@</font>";
+			console.log(uname_obj.value+"不合法，不能含有@");
+		}else{
+			span_list_obj[0].innerHTML = "<font color='green'>该用户名可以使用</font>";
+			console.log("该用户名可以使用");
+		}
+		console.log(uname_obj.value);
+	}
+
+	</script>
+</body>
+</html>

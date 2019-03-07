@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作用域</title>
+</head>
+<body>
+	<script>
+	//作用域：变量
+	//全局变量：作用域是任意地方
+	var uname = 'libai'; 
+	var age = 1010;
+	var address ="南京市";
+
+
+	function uinfo(sex){
+		//局部变量：作用域只在当前函数体内部
+		var uname = 'houyi';
+		var age = '80';
+		var like = '打篮球';
+		console.log(uname);
+		console.log(age);
+		console.log(sex);
+		console.log(address);
+	}
+	// 输出变量
+
+	document.write(uname);
+
+	//调用函数
+	uinfo("男");
+	document.write(uname);
+	//读取函数内部
+	// document.write(like);
+	//找不到like变量  like is not defined
+	// document.write(sex);
+	//找不到sex变量  sex is not defined
+
+	//变量作用域
+	var proName = "苹果";
+	var num = 10;
+
+	//函数1:
+	function fun1(){
+		var price = 15; //15 * 10
+		console.log("总价是"+num*price); //150
+	}
+
+	fun1();
+
+	//函数2:
+	function fun2(){
+		var price = 18;
+		var num = 20;    //18 * 20
+		console.log("总价是"+num*price);
+	}
+	fun2();
+
+
+	//函数3
+	function fun3(){
+		var address = "海南"; //声明变量(在这)
+		// var date = "2019-1-8";
+		date = "2019-1-8";  //声明提前(函数外-全局) 
+		//只能在这访问到date
+		console.log(address + date);
+	}
+	fun3(); //函数调用后，会给date做声明提前
+	console.log(date);  //date 2019-1-8
+	
+	</script>
+</body>
+</html>

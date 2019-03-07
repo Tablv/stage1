@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.nav{
+		width:400px;
+		height:36px;
+		border:1px solid red;
+		line-height:36px;
+	}
+	.nav a{
+		text-decoration:none;
+		color:#333;
+		width:70px;
+		display:inline-block;
+		text-align:center;
+	}
+	a.current{
+		color:red;
+		background:pink;
+	}
+	.article p.current{display:none;}
+	</style>
+	<script src='jq/jquery-1.4.js'></script>
+	<script>
+	//给第一个a标签添加current类
+	$(function(){
+		//jquery 提供的对 类选择器的操作方法   addClass('class_name')
+		$('.nav a:eq(0)').addClass('current');
+		//功能：点击切换
+		//点击a标签，添加current类，其余的a去除current
+		$('.nav a').click(function(){
+			//先干掉所有的
+			$('.nav a').removeClass('current')
+			//给当前的添加上
+			$(this).addClass('current');
+		});
+
+
+	});
+	</script>
+	<script>
+	$(function(){
+		//加载函数
+		//点击h3标题的时候，切换文章内容的current
+		$(".article h3").click(function(){
+			$(".article p").toggleClass('current');
+		});
+	});
+
+
+	</script>
+</head>
+<body>
+	<p class="nav">
+		<a href="#">服装</a>
+		<a href="#">水果</a>
+		<a href="#">家电</a>
+		<a href="#">电器</a>
+		<a href="#">图书</a>
+	</p>
+	<div class="article">
+		<h3>桃花源记</h3>
+		<p class="current">你好啊陶渊明，小呆比</p>
+	</div>
+</body>
+</html>

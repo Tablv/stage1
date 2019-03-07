@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.can1{
+		border:1px solid red;
+		width:600px;
+		height:600px;
+
+	}
+	</style>
+	<script src='jq/jquery-1.9.1.min.js'></script>
+	<script>
+	$(function(){
+		var x = 0; y =0;
+		var top = document.getElementById("top");
+		var bottom = document.getElementById("bottom");
+		var left = document.getElementById("left");
+		var right = document.getElementById("right");
+			function wan(x,y){
+				var can1 = document.querySelector(".can1")
+				//创建context对象
+				var picture = can1.getContext("2d");
+				//挑选工具，设定颜色等相关属性
+				picture.fillStyle = '#FB0808';
+				picture.rect(x, y, 3, 3);//创建矩形
+				picture.fill();//填充绘制（实际绘制）
+			}
+		top.onclick = function(){
+			y--;
+			wan(x,y);
+		}
+		bottom.onclick = function(){
+			y++;
+			wan(x,y);
+		}
+		left.onclick = function(){
+			x--;
+			wan(x,y)
+		}
+		right.onclick = function(){
+			x++;
+			wan(x,y)
+		}
+	});
+	
+	</script>
+</head>
+<body>
+<!-- 1）准备画布 -->
+	<canvas class="can1"></canvas><br>
+	<input type="button" value="上" id='top'>
+	<input type="button" value="下" id='bottom'>
+	<input type="button" value="左" id='left'>
+	<input type="button" value="右" id='right'><br>
+
+</html>

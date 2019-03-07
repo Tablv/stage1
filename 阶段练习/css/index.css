@@ -1,0 +1,385 @@
+/*
+* @Author: Administrator
+* @Date:   2019-01-17 20:07:16
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-01-24 19:17:12
+*/
+*{
+	margin:0 auto;
+	padding:0;
+}
+body{
+	font-family: '微软雅黑';
+	font-size:16px;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.public{
+	width:1000px;
+	margin:0 auto;
+	padding:0;
+}
+/* 顶部  all*/
+.head{
+	width:100%;
+	color:#fff;
+	position:fixed;
+	top:0;
+	z-index:50;
+	background:#fff;
+}
+/* 页面顶部 固定位置+背景色 */
+.head_top{
+	width:100%;
+	background:#353535;
+	height:40px;
+	
+}
+/* 顶部p标签 */
+.head_top p{
+	height:40px;
+	display:inline-block;
+	margin:0 10px;
+}
+/* 顶部a标签 */
+.head a{
+	display:inline-block;
+	color:#fff;
+	text-decoration:none;
+}
+
+/* 顶部左侧结构 */
+/* 顶部天气 */
+.head_top .left img{
+	width:40px;
+	height:40px;
+}
+.head_top .left p span{
+	line-height:28px;
+	margin:5px 5px;
+}
+.head_top .left p{
+	float:left;
+}
+.head_top .left p:last-child{
+	line-height:40px;
+}
+
+
+/* 顶部右侧导航 */
+.head_top .right p{
+	float:right;
+	line-height:40px;
+}
+.head_top .right p:first-child{
+	line-height:48px;
+}
+
+
+/* 顶部中间logo+搜索框 */
+.head_center{
+	height:100px;
+	padding-top:5px;
+	position:relative;
+	
+}
+.head_center img{
+	height:100%;
+}
+/* 搜索框 */
+.head_center form{
+	display:inline-block;
+	border:1px solid #C9C9C9;
+	position:absolute;
+	right:0;
+	bottom:20px;
+}
+.head_center form select{
+	border:none;
+	height:34px;
+	width:110px;
+	padding-left:30px;
+	color:#ccc;
+	font-size:18px;
+	border-right:1px solid #C9C9C9;
+	float:left;
+}
+.head_center form .selflag{
+	border:none;
+	color:#ccc;
+	width:230px;
+	font-size:18px;
+	height:34px;
+	float:left;
+
+}
+.head_center form .sub{
+	width:20px;
+	height:21px;
+	border-left:1px solid #C9C9C9 ;
+	padding:6px 20px;
+	float:left;
+}
+
+/* 导航条 */
+.head_bottom{
+	margin-top:3px;
+	background:#0B7722;
+}
+.head_bottom .public a{
+	width:120px;
+	height:50px;
+	margin:0 11px;
+	text-align:center;
+	line-height:50px;
+	float:left;
+}
+.head_bottom .public a:hover{
+	box-shadow: 0px -3px #D04608;
+	background:#F88A01;
+}
+.head_bottom .public:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/* 中间内容 */
+.content{
+	margin-top:200px;
+}
+/* 站内公告 */
+.content .left p{
+	margin-top:10px;
+	height:18px;
+	width:728px;
+	color:#969696;
+	border:1px solid #D1D1D1;
+	overflow: hidden;
+}
+.content .left p img{
+	height:100%;
+	float:left;
+}
+.content .left p span{
+	font-weight: bold;
+	color:#000;
+	float:left;
+}
+
+/* 图片展览 */
+.content .left .imgshow{
+	margin-top:5px;
+}
+.content .left .imgshow img{
+	height: 300px;
+	width:730px;
+}
+.content .img_content{
+	position:relative;
+} 
+.content .img_content .btn_span{
+	position:absolute;
+	display:block;
+	width:730px;
+	bottom:5px;
+	text-align: center;
+}
+
+/* 右边图标按钮 */
+.content .right{
+	width:260px;
+}
+
+.content .right table{
+	width:260px;
+	height:345px;
+	text-align:center;
+	border-collapse:separate;
+	border-spacing:10px;
+	line-height:1.5em;
+	color:#fff;
+}
+.content .right table td[name=td1]:first-child{
+	background:#D44209;
+}
+.content .right table td[name=td2]:last-child{
+	background:#0A7724;
+}
+
+.content .right table td:first-child{
+	background:#E39242;
+}
+.content .right table td:last-child{
+	background:#3FBD44;
+}
+
+.content:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/* 中间第二块内容 */
+/* 左边部分 */
+.content1{
+	margin-top:15px;
+	position:relative;
+}
+/* 标题 */
+.content1 .content_left .content_title{
+	width:707px;
+	height:20px;
+	display:block;
+	padding:0 10px;
+	border-left:3px solid #F58301;
+	float:left;
+}
+.content1 .content_left .content_title h3{
+	display:block;
+	float:left;
+	color:#368D4B;
+}
+.content1  .content_title a{
+	display:block;
+	float:right;
+	font-size:0.5em;
+	line-height:2em;
+	text-decoration:none;
+	color:#3C8ACE;
+}
+.content1 .content_left{
+	width:730px;
+}
+/* 内容 */
+.content1 .content_left div{
+	width:340px;
+	margin:15px 0;
+	line-height:20px;
+	position:relative;
+}
+.content1 .content_left div img{
+	position: absolute;
+	right:0;
+}
+.content1 .content_left table{
+	border-collapse:collapse;
+	line-height:2em;
+}
+.content1 .content_left table tr{
+	border-bottom:1px solid #EFEFEF;
+}
+.content1 .content_left table tr:last-child{
+	border-bottom:0
+}
+.content1 .content_left table td:first-child{
+	font-weight:bold;
+	width:100px;
+}
+.content1 .content_left table td a{
+	color:#858585;
+	margin:0 10px;
+	font-size:0.5em;
+	text-decoration:none;
+	display:inline-block;
+}
+
+/* 右边内容 */
+.content1 .content_right .content_title{
+	width:225px;
+	height:20px;
+	display:block;
+	padding:0 10px;
+	margin-top:20px;
+	border-left:3px solid #F58301;
+	float:left;
+}
+
+.content1 .content_right .content_title h3{
+	display:block;
+	line-height:1em;
+	float:left;
+	color:#368D4B;
+}
+.content1 .content_right .baokao ul{
+	margin-top:50px;
+	list-style:none;
+	padding:0;
+}
+.content1 .content_right .baokao ul li{
+	padding:10px;
+	padding-left:10px;
+	border-bottom:1px solid #EEEEEE;
+}
+.content1 .content_right .baokao ul li:last-child{
+	margin:0;
+	text-align: center;
+	border:0;
+}
+.content1 .content_right .baokao ul li:nth-child(3){
+	margin:0;
+	padding-bottom:0;
+	border:0;
+}
+
+.content1 .content_right .baokao ul li span:first-child{
+	background: url(../img/1_63.png) no-repeat;
+	background-size:100% 100%;
+	display: inline-block;
+	text-align: center;
+	line-height:20px;
+	width:20px;
+	height:20px;
+	overflow: hidden;
+}
+.content1 .content_right .baokao ul li span:last-child{
+	display:block;
+	text-align:left;
+	padding-left:25px;
+	color:#858585;
+	font-size:0.5em;
+	line-height:20px;
+	height:20px;
+}
+.content1 .content_right .img{
+	margin-top:10px;
+	width:247px;
+}
+
+.content1 .content_right .gaokao ul{
+	list-style:none;
+	border:1px solid #E2E2E2;
+	text-align:left;
+	font-size:0.8em;
+	padding:0;
+}
+.content1 .content_right .gaokao ul li{
+	list-style:none;
+	border-bottom:1px solid #E2E2E2;
+	line-height:4em;
+	margin:0 10px; 
+
+}
+.content1 .content_right .gaokao ul li:last-child{
+	border:0;
+}
+.content1 .content_right .gaokao ul li span{
+	background:url(../img/1_77.png) no-repeat;
+	display:block;
+	background-size:100% 100%;
+	text-align:center;
+	width:80px;
+	height:20px;
+	line-height:20px;
+	margin-top:15px;
+	float:right;
+}
+
+.content1 .content_foor{
+	padding-top:20px;
+	clear:both;
+}

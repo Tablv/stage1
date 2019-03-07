@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#daohangtable{
+			margin-top: 2%;
+			margin-left: 25%;
+			width: 50%;
+			height: 50px;
+			background: url(img/111.jpg);
+			color: #D0C9C9;
+			text-align: center;
+		}
+ 		#myself{
+			margin-left: 25%;
+			width: 30%;
+			height: 30px;
+			background:#989393;
+			line-height: 30px;
+			text-indent:1em;
+		}
+		form{
+			margin-top: 2%;
+			margin-left: 30%;
+			width: 50%;
+		}
+		a{
+			color: #D0C9C9;
+		}
+		a:link {text-decoration:none; }    /* 未被访问的链接 */
+		a:visited {text-decoration:none;} /* 已被访问的链接 */
+		a:hover {text-decoration:underline;}   /* 鼠标指针移动到链接上 */
+		a:active {text-decoration:underline;}   /* 正在被点击的链接 */
+		td{
+			height: 50px;
+		}
+	</style>
+</head>
+<body>
+	<table id="daohangtable">
+		<tr>
+			<td><a href="09_主页.html">我的主页</a></td>
+			<td><a href="10_图文集.html">我的图文集</a></td>
+			<td><a href="11_加入我们.html">加入我的网站</a></td>
+		</tr>
+	</table>
+	<div id="myself">
+		<h4 style="width:150px;background:url(img/222.png) repeat-x;">加入我的网站</h4>
+	</div>
+	<form action="index.php" method="get" enctype="multipart/form-data" >
+		<table>
+			<tr>
+				<td>用户民:</td>
+				<td><input type="text" name="uname" maxlength="10"></td>
+			</tr>
+			<tr>
+				<td>学号:</td>
+				<td><input type="text" name="ucode" value="123456"></td>
+			</tr>
+			<tr>
+				<td>密码:</td>
+				<td><input type="password" name="upass"></td>
+			</tr>
+			<tr>
+				<td>性别:</td>
+				<td>
+					<input type="radio" name="sex" value="男" disabled>男
+					<input type="radio" name="sex" value="女">女
+					<input type="radio" name="sex" value="人妖" checked>人妖
+				</td>
+			</tr>
+			<tr>
+				<td>爱好：</td>
+				<td>
+					<input type="checkbox" name="like" value="吃饭">吃饭
+					<input type="checkbox" name="like" value="睡觉" checked>睡觉
+					<input type="checkbox" name="like" value="打豆豆">打豆豆
+				</td>
+			</tr>
+			<tr>
+				<td>地址：</td>
+				<td>
+					<select name="province" id="">
+						<option value="江苏省">江苏省</option>
+						<option value="浙江省" selected>浙江省</option>
+						<option value="安徽省" disabled>安徽省</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>照片：</td>
+				<td><input type="file" name="uhead" multiple></td>
+			</tr>
+			<tr>
+				<td>自我介绍：</td>
+				<td><textarea name="myself" cols="30" rows="10" style="resize:none;"></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center;">
+					<input type="submit" value="注册">
+	
+					<!-- 重置按钮 -->
+					<input type="reset" value="重置">
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+</body>
+</html>

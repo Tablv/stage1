@@ -1,0 +1,94 @@
+第三章.JS
+一.JS对HTML DOM操作
+	DOM:Document Object Model(文档对象模型)
+	1.js获取HTML标签元素对象
+	
+	<script>
+	1)通过标签名获取元素对象		【数组】
+	document.getElementsByTagName(tagname);
+	2)通过id名获取元素对象			【唯一的标签元素】
+	document.getElementById(id);
+	3)通过class名获取元素对象		【数组】
+	document.getElementsByClassName(className);
+	4)通过name属性名获取元素对象	【数组】
+	document.getElementsByName(name);
+
+	通过css选择器获取元素对象
+	5)获取唯一的第一个 	类似于id查找结果
+	document.querySelector(selectors);
+	6)获取所有的 【数组】
+	document.querySelectorAll(selectors);
+
+
+	</script>
+
+2.js操作HTML标签的属性
+<script>
+	
+	//获取属性值
+	Ele.属性名;
+	//添加属性/重新设置属性
+	Ele.属性名 = 值;
+	//移除属性 
+	Ele.属性名 = "";
+
+	//使用属性操作方法
+	//1）获取标签
+	var Ele = document.querySelector("标签");
+	//2) 获取属性
+	Ele.getAttribute("属性名");
+	//3)修改属性、设置
+	Ele.setAttribute("属性名", "值");
+
+	//4)删除属性
+	Ele.removeAttribute("属性名");
+</script>
+3.js 操作HTML标签的CSS样式
+<script>
+	//应用1 行内Style属性
+	//1) 获取Style属性
+	Ele.style;//获取所有样式
+	Ele.style.样式名; //具体的样式
+	
+	//2）修改Style属性
+	Ele.style = css样式;
+	Ele.style.样式名 ="值";
+	Ele.style.border = "1px solid red";
+	//3）移除Style属性
+	Ele.style = "";
+	Ele.style.样式名 ="";
+	Ele.style.border = ""; 
+
+
+	//应用2 class(类选择器)属性操作
+	//1) 获取class(类选择器)属性
+	Ele.className;
+	Ele.classList;
+	//2）修改class(类选择器)属性
+	Ele.className += "" +"newClass";
+	Ele.classList.add("newClass");
+	//3）移除class(类选择器)属性
+	Ele.className = ""; //移除所有class
+	Ele.classList.remove("calssName");//移除制定class类选择器
+</script>
+4.js操作标签的内容
+<script>
+	//1）双标记标签内容
+	//获取内容
+	div_obj.innerHTML;
+	div_obj.innerText;
+	//修改
+	div_obj.innerHTML = "值";
+	div_obj.innerText = "值";
+	清空内容
+	div_obj.innerHTML = "";
+	div_obj.innerText = "";
+
+	//2)表单控件元素内容
+	//获取内容
+	input_obj.value;
+	//修改
+	input_obj.value = "值";
+	// 清空内容
+	input_obj.value = "";
+</script>

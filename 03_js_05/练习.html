@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	// 生成n行n列的表格
+	// 偶数行颜色自定义，边框颜色自定义
+	function createTable(row,col,bdcolor,color){
+		document.write("<table border=1 cellspace = 0 cellpadding=5 bordercolor="+bdcolor+">");
+		for(var i = 1 ; i<=row;i++){
+			if(i % 2 == 0){
+				document.write("<tr style=\'background:"+color+";\'>")
+			}else{
+				document.write("<tr>")
+			}
+			for(var j=1;j<=col;j++){
+				document.write("<td>"+i+"-"+j+"</td>")
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>");
+	}
+	//调用函数
+	createTable(9,4,"blue","red");
+	</script>
+	
+</body>
+</html>

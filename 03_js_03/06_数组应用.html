@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//数组：一次性可以存储多个信息
+	//多个值数据类型不限制
+	var arr1 = ["apple",123,true];
+	console.log(arr1)
+	console.log(arr1[2]);//true
+	arr1[2] = false;
+	arr1[3] = 'bababa'
+	console.log(arr1); //["apple", 123, false, "bababa"]
+
+	//存储一名学生的个人信息
+	//陈赫  男  30  中国  天才
+	var person = ["陈赫","男","30","中国","天才"];
+	console.log(person);
+
+	//取出来显示到页面上
+	//
+	
+	document.write(person[0]+"<br>");
+	document.write(person[1]+"<br>");
+	document.write(person[2]+"<br>");
+	document.write(person[3]+"<br>");
+	document.write(person[4]+"<br>");
+
+	//最大下标  = 数据.length-1
+	for(var i = 0 ; i<person.length;i++){
+		document.write(person[i]+"<br>")
+	}
+
+
+
+
+	var i = 0;
+	do{
+		document.write(person[i]);
+		i++;
+	}while(i < person.length)
+
+
+	var i = 0;
+	while(i<person.length){
+		document.write(person[i]);
+		i++;
+	}
+
+	for(i in person){
+		document.write(person[i]);
+	}
+	//1)用一个数组存储新闻标题
+	//
+	//无序列表结构
+	//序号自己写：加一个背景色
+	var newTitle = [
+					"紧急通知",
+					"'三八节'女性旅游乐享半价优惠",
+					"暂停旅游社业务公告",
+					"九华山门票恢复全价",
+					"'三八'节短线游走俏",
+					"4月初去动物园看羊驼",
+					"安徽省旅游指委召开会议号",
+					"武汉﹑芜湖旅行商踩线团云集岳西",
+					"2011年全省旅游工作会",
+					"全椒神山国际生态精品农业"
+					];
+	document.write("<ul type='none' style='padding:50px;width:300px;height:300px;background:#ADD4BA;line-height:30px;'>")
+	for(i in newTitle){
+		var j = Number(i)+1;
+		if(j <=4 ){
+			document.write("<li>"+"<span style='display:inline-block;width:20px;height:20px;background:#EBEDAE;line-height:20px;text-align:center;'>"+j+"</span>&nbsp<a href='#'>"+newTitle[i]+"</a></li>");
+		}else{
+			document.write("<li>"+"<span style='display:inline-block;width:20px;height:20px;background:#A47D7D;line-height:20px;text-align:center;'>"+j+"</span>&nbsp<a href='#'>"+newTitle[i]+"</a></li>");
+		}
+		
+	}
+	document.write("</ul>")
+
+
+	//for 循环控制每一行新闻输出：li
+	
+	</script>
+</body>
+</html>

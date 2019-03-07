@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数返回值</title>
+</head>
+<body>
+	<script>
+	//需求：定义一个函数，检验一下传入的值是不是闰年？
+	//某某年是闰年
+	//某某年是平年
+
+	function checkYear(year){
+
+		if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
+			// console.log(year+"是闰年！");
+			return year+"是闰年！";
+		}else{
+			// console.log(year+"是平年！")
+			return year+"是平年！";
+		}
+		// return '检验是否是闰年';
+	}
+	var rs = checkYear(2008);
+	console.log(rs);
+	// checkYear(2008);
+
+
+	//字符串方法  查找字符 indexOf(字符[,位置])
+	//结果就是以return的形式放回给我们的
+	var str = "apple@123";
+	var index = str.indexOf('@');
+	document.write(index);
+	</script>
+</body>
+</html>

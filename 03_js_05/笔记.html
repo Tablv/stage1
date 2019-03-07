@@ -1,0 +1,144 @@
+第三章  js
+一.函数
+	1.什么是函数
+	反复被使用的代码块/重复去做的一件事情
+	类似于"公共类"的作用
+
+	2.作用
+		定义一次，多次被使用
+	3.定义函数
+		<script>
+		//函数定义方法一：自定义函数
+		function 函数名([参数1，参数2，参数3....]){
+			反复被使用的代码块
+			事情的流程
+		}
+		//定义函数1
+		function aa(){
+			console.log("第一个函数aa");
+		}
+		
+		//定义函数2
+		function bb(){
+			console.log("第二个函数bb");
+		}
+		
+
+		// 注释: 函数名要符合命名规范
+
+		//定义函数方法2:匿名函数
+		var cc = function(num){
+			console.log("函数cc"+num);
+		}
+		//cc是函数名
+		//执行函数（调用）
+		</script>
+	4.调用函数
+		<script>
+		函数名([值1，值2，值3...]);
+		函数调用可以在定义之前和之后
+
+		</script>
+	5.在标签里调用函数(标签的事件属性)
+		1.标签里调用
+		<p onclick="函数名(参数)"></p>
+		2.js内调用
+		<h1 id="tiltle"></h1>
+		<script>
+			title.oncilck = function(){
+				//事件流程
+			}
+		</script>
+	6.作用域/作用范围
+	<script>
+	1)变量作用域
+		全局变量:在函数内外都可以访问
+		局部变量：只在函数体内被访问
+		变量提升：函数调用后可以把声明提前到函数外
+	2)函数作用域
+		全局函数：在函数内外都可以调用
+		局部函数：只有在父函数内部才可被调用
+
+	var name ='apple'; //全局变量
+	function fun1(like){
+		var age = 20 ; // 局部变量
+		sex = '男'; //变量提升
+		//like参数  局部变量
+	}
+	//全局函数fun2
+	function fun2(){
+		//局部函数fun3
+		function fun3(){
+
+		}
+	}
+	</script>
+	7.函数返回值
+	<script>
+	function fun1(){
+		return 值;
+	}
+	return 的作用
+	1）遇到return 跳出整个函数
+	2）一个函数最终只能有一个返回值
+	3）返回值可以用变量来接收
+	4）返回值可以使任意类型
+	</script>
+二.函数的返回值
+	<script>
+	function fun1(){
+		return 值;
+	}
+	return 的作用
+	1）遇到return 跳出整个函数
+	2）一个函数最终只能有一个返回值
+	3）返回值可以用变量来接收
+	4）返回值可以使任意类型
+	</script>
+三.数据类型 Null 和 Undefined
+	1)Null:空
+		只有一个值：null
+		<script>
+			//什么情况下是undefined？
+			var uname;//声明变量
+			console.log(uname); //undefined
+			//undefined 是所有变量默认初始值
+			var nick = ""; //初始化变量
+			console.log(nick);
+
+		</script>
+	2)Underfined;未声明、未定义
+		只有一个值：underfined
+		<script>
+			//什么时候显示null
+			//用js匹配查找id 是a1 a2
+			console.log(a1);//简化:直接用id名，一般不建议这么使用
+
+			var getid=document.getElementById("a2");//<a href="#" id="a1">首页</a>
+			console.log(getid); //<a href="#" id="a2">友情链接</a>
+			console.log(document.getElementById("a2").href); //file:///D:/web1811/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/03_js_05/10_null%E5%92%8Cundefined.html#
+			console.log(document.getElementById("p1")); //null  
+			//没找到就是null
+		</script>
+	3）值是相等的
+		null == undefined  true
+四.js的方法
+	<script>
+	// 1）parseInt(值); 提取整数，但必须得是数字在前面
+		console.log(parseInt(20.23)); //20
+		console.log(parseInt("20.23DFDS")); //20
+		console.log(parseInt("DFDS20.23")); //NaN 非数值
+		console.log(parseInt("20.23DFDS")+2); //22   parseInt("20.23DFDS") TYPE IS number
+	// 2）parseFloat(值); 提取小数
+		console.log(parseFloat(20.23)); //20.23
+		console.log(parseFloat("20.23DFDS")); //20.23
+		console.log(parseFloat("DFDS20.23")); //NaN 非数值
+		console.log(parseFloat("20.23DFDS")+2); //22.23   parseInt("20.23DFDS") TYPE IS number
+
+	// 3）typeof(值); 检查数据类型
+		console.log(typeof(20.23)); //Number
+		console.log(parseFloat("20.23DFDS")); //String
+		console.log(parseFloat(true)); //boolean
+		console.log(typeof true); 
+	</script>
+	

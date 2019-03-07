@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+</head>
+<body>
+	<script>
+	//需求：输出一到五之间的数
+	// document.write(12345);
+	// 要求添加时间控制
+	// document.write(1);
+
+	// document.write(2);
+	// document.write(3);
+	// document.write(4);
+	// document.write(5);
+	var i = 0;//全局变量
+	function printNum(){	
+		if(i<5){
+			document.write(i++,"<br>");
+		}else{//停止计时
+			document.write(i);
+			clearInterval(t1);
+		}
+	}
+
+	// setInterval(函数名,时间(单位毫秒));
+	//每隔1秒执行该函数，循环执行
+	// var t1 = setInterval(printNum,1000);  //函数   间隔的时间
+	
+	//延迟一秒调用一次函数（执行一次就结束了），控制两个函数的执行时间
+	var t2 = setTimeout(printNum,1000); //函数  延迟的事件
+	</script>
+</body>
+</html>

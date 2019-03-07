@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>切换图</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.box{
+		width:400px;
+		border:1px solid green;
+		margin:20px auto;
+	}
+	/* 大图 */
+	.box>img{
+		width:400px;
+		height:300px;
+	}
+	/* 小图 */
+	.box .small_box img{
+		width:94px;
+		height:80px;
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<!-- 大图 -->
+		<img src="images/01.jpeg">
+		<!-- 小图 -->
+		<div class="small_box">
+			<img src="images/01.jpeg">
+			<img src="images/02.jpeg">
+			<img src="images/03.jpeg">
+			<img src="images/04.jpeg">
+		</div>
+	</div>
+
+
+	<script>
+	//小图放大
+	//点击一张放大一张
+	//点击下面小图，将小图的src属性值给 大图的src属性
+	
+	//获得大图img标签
+	var big_img = document.querySelector(".box>img");
+	// console.log(big_img);
+	//获得小图img标签列表
+	var small_img_list = document.querySelectorAll(".small_box>img")
+
+	//开始切换 把小图的src 赋值给 大图的src
+	for(i in small_img_list){
+		small_img_list[i].onclick= function(){
+			big_img.src = this.src;
+		}
+	}
+
+	</script>
+</body>
+</html>

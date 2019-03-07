@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器应用</title>
+</head>
+<body>
+	<p>
+		祝贺您，登录成功！<font color=red size=+2>5</font>秒之后跳转到主页...
+	</p>
+
+
+
+	<script>
+	//获取标签
+	var font_obj = document.querySelector("font");
+	var p_obj = document.querySelector("p");
+	//声明函数  功能-1
+	function changeNum(){
+		font_obj.innerText--;
+		if(font_obj.innerText == 0){
+			//清除计时器
+			clearInterval(jisuqi);
+			//跳转页面
+			// p_obj.innerHTML = "<h3>欢迎来到主页，傻吊</h3>"
+			window.location.href="file:///D:/web1811/第一阶段/03_js_08/02_随机验证码.html";
+		}
+	}
+	//计时器控制函数调用
+	var jisuqi = setInterval(changeNum,1000);
+
+	console.log();
+
+	</script>
+</body>
+</html>

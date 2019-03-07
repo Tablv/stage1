@@ -1,0 +1,100 @@
+----苹果官网首页
+----css(文件夹)
+	---index.css
+----img
+
+css hack问题一:图片底部留白
+解决方法:
+	1)img{display:block;}块与块无缝贴齐
+	2)img{float:left}浮动的元素无缝贴齐
+css样式修饰:轮廓(边框,不能设置某个方向)
+	1)outline:1px solid red;
+	2)去除:
+		input:focus{outline:none/0;}
+	3)outline-offset:2px/-2px;
+		轮廓偏移:2px往外偏移 -2px往内偏移 
+		可实现内边框效果
+
+html+css
+第一章 HTML
+1.行元素：可以在同一行显示,不能设置宽高(a,font,b,span)
+	行内块:可以在同一行显示，并且可以设置宽高(img,input..)
+
+2.块元素：自动换行
+	p,h1-h6,div,table,ul,li,ol...
+
+	css中的display可以转换元素类型
+	1)display:inline;行内元素
+		无宽高，不换行
+	2)display:inline-block;行内块元素
+		有宽高，不换行
+	3)display:block;块元素
+		有宽高，会换行
+3.定位:脱离页面本身，浮起在页面上空
+	1)浮动定位:float
+		效果:元素要实现左右排列
+		特点:浮动的元素不占位置
+
+	2)位置定位:position
+		效果:要实现上下层覆盖
+		特点:
+			position:relative;占位置
+			position:absolute;不占位置
+			position:fixed;不占位置
+		方向:
+			top/bottom/left/right
+		纵深:改变图层顺序
+			z-index:10;(数值越大，图层越靠上)
+4.让父元素高度包含住子元素
+	1)设置固定高度(不灵活)
+	2)给父元素设置overflow:hidden;(溢出内容会隐藏)
+	3)在父盒子的末端添加一个子元素
+	<div class="father">
+			<div class="left"></div>
+			<div class="right"></div>
+			<div style="clear:both;"></div>
+	</div>
+	4)在父盒子的末端添加一个子元素(伪元素)
+		.father:after{
+			content:"";display:block;clear:both;
+		}
+	5)实现正常布局(father依旧没有高度，不建议使用)
+		<div class="father">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+		<div style="clear:both"></div>
+5.显示/隐藏切换方式
+	1)display
+		display:none;隐藏，不占位置
+		display:inline/inline-block/block;
+	2)opacity:0-1;透明度
+		opacity:0;隐藏，占位置
+		opacity:>0;显示
+	3)visibility显示状态
+		visibility:hidden;隐藏，占位置
+		visibility:visible;显示
+6.权重:权重越高就优先使用
+	!important>行内样式>id>属性选择器>class类>标签选择器>*
+7.表单元素(form)
+	1)action="index.php"提交地址
+	2)method="get/post" 提交方式(post安全)
+	3)enctype="multipart/form-data"
+		如果有文件域:<input type="file">要加enctype
+	控件：
+	1)要提交数据的控件必须起名字(唯一)
+		name="uname"
+	2)一个组合名字要一致
+		单选按钮组/多选按钮组
+		<input type="radio" name="sex" value="男">
+		<input type="radio" name="sex" value="女">
+	3)value值设置(默认值)
+		radio/checkbox/select里的option
+		要自己设置好不同的value值
+8.边框效果
+	1)border(外边框)占位置
+		border-top/bottom/left/right:1px solid red;
+	2)outline(轮廓)不占位置
+		outline:1px solid red;
+	偏移值:(可以实现内外边框)
+		outline-offset:2px/-2px;

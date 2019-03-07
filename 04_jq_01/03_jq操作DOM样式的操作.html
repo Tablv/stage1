@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		//加载函数准备ok
+		$('.article'); //jq的dom
+		console.log($(".article"));
+		//添加或设置css样式
+		$('.article').css('border','1px solid red');//单个赋值
+		$('.article').css({
+			width: '400px',
+			background: 'pink',
+			textIndent:'2em'
+		});
+		//出现-的变量，因为不符合语法规则，将-去掉，下个单词手机大写，用小驼峰格式
+		//获取css样式
+		console.log($(".article").css("border"));
+		//删除摸个css样式
+		$(".article").css('background',"");
+
+
+		//需求  给p标签同意加一个蓝色的表框
+		      // 文字加下划线  行高40
+		      // 偶数行 粉色pink背景
+		      // 奇数行 橘色orange背景色
+		 console.log($(".article p"));
+		 $(".article p").css({
+		 	border:"1px solid blue",
+		 	textDecoration:"underline",
+		 	lineHeight:"40px"
+		 });
+		 // console.log($(".article p").length);
+		 // for( var i=0;i< $(".article p").length;i++){
+		 // 	console.log($(".article p")[i])
+		 // 	if(i % 2 == 1){
+		 // 		console.log(1);
+		 // 		$(".article p")[i].style.background='pink';
+		 // 		// $(".article p:nth-child("+(i+1)+")").css('background','pink');
+		 // 	}else{
+		 // 		$(".article p")[i].style.background='orange';
+		 // 		// $(".article p:nth-child("+(i+1)+")").css('background','orange');
+		 // 	}
+		 // }
+		 // :even(偶数下标)奇数行
+		 // :odd(奇数下标)偶数行
+		 $(".article p:even").css("background",'orange');
+		 $(".article p:odd").css("background",'skyblue');
+
+	});
+	</script>
+</head>
+<body>
+	<div class="article">
+		<p>段落一</p>
+		<p>段落二</p>
+		<p>段落三</p>
+		<p>段落四</p>
+	</div>
+</body>
+</html>

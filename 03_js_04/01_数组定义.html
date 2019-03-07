@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组定义</title>
+</head>
+<body>
+	<script>
+	var arr = [1,"a",true];
+	console.log(arr);
+	/*
+	0:1
+	1:"a"
+	2:true
+	length:3
+	 */
+	for(i in arr){
+		console.log(arr[i]);
+	}
+	//定义一个二维数组
+	var arr2 = [15,"banana",[1,2,3]];
+	console.log(arr2);
+	/*
+	[15, "banana", Array[3]]
+	0:15
+	1:"banana"
+	2:Array[3]
+		0:1
+		1:2
+		2:3
+		length:3
+	length:3
+	 */
+	console.log(arr2[1]);//banana  字符串
+	console.log(arr2[2]); //[1,2,3] 是一维数组
+	console.log(arr2[2][1]);
+	//多维数据取元素：从外往内层取
+	
+	//需求：取多维数组元素
+	var arr3 = [
+		['邓超','18','学习'],
+		[
+			['李晨',30,'男'],
+			['baby',18,'女']
+		],
+		[
+			['apple','banana','pear']
+		]
+	];
+	//取李晨 baby  banana
+	console.log(arr3[1][0][0],arr3[1][1][0],arr3[2][0][1]);
+
+
+	//声明二维数组
+	//需求：存储多个学生的相关信息
+	//姓名  性别  年龄   地址
+	//邓超  男     20    南京市
+	//李晨  男     30    北京市
+	//祖蓝  男     50    东京市
+	var person1 = ['邓超','男','20','南京市'];
+	var person2 = ['李晨','男','30','北京市'];
+	var person3 = ['祖蓝','男','50','东京市'];
+
+	var  arr4 = [person1,person2,person3];
+	var arr5 = [['邓超','男','20','南京市'],['李晨','男','30','北京市'],['祖蓝','男','50','东京市']];
+	console.log(arr4);
+	console.log(arr5);
+
+
+	//循环遍历二维数组
+	for(var i = 0 ; i < arr4.length; i++){
+		for(var j = 0; j< arr4[i].length; j++){
+			document.write(arr4[i][j]);
+		}
+			document.write("<br>");
+	}
+
+
+	for(var i in arr4){
+		for(var j in arr4[i]){
+			document.write(arr4[i][j]);
+		}
+		document.write("<br>");
+	}
+	</script>
+</body>
+</html>

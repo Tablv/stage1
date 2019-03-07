@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jq操作DOM属性</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){//DOM加载完成
+		console.log($(".menu")); //JQUERY 的DOM
+		//添加一个属性设置
+		//修改type属性的值
+		$(".menu").attr('type','circle');
+		//修改a的加上一个属性title，属性值：导航
+		$(".menu a").attr('title','导航');
+		//获取ul的type属性
+		console.log($(".menu").attr('type')); //circle
+		console.log($(".menu")[0]);//原生DOM
+		console.log($(".menu")[0].type); 
+
+		//获取原生DOM元素
+		var ul=document.querySelector(".menu");
+		console.log(ul); // 原生DOM
+		ul.type = "square";
+
+		//原生DOM  ul转成  jq DOM的 $(ul)
+		console.log($(ul));
+		console.log($(ul).attr('type'));
+
+		//设置表格效果
+		//可以是字符串，可以不加，但是格式最好统一
+		$(".tabs").attr({
+			border:'1px',
+			bordercolor:"red",
+			cellspacing:"0",
+			width:"300px"
+			'height':"400px";
+		});
+	});
+	</script>
+
+
+</head>
+<body>
+	<ul class="menu">
+		<li><a href="#">淘宝</a></li>
+		<li><a href="#">京东</a></li>
+		<li><a href="#">当当</a></li>
+		<li><a href="#">亚马逊</a></li>
+	</ul>
+	<table class="tabs">
+		<tr>
+			<td>单元格</td>
+			<td>单元格</td>
+		</tr>
+		<tr>
+			<td>单元格</td>
+			<td>单元格</td>
+		</tr>
+	</table>
+</body>
+</html>

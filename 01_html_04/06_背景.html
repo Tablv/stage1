@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h1{
+			width:500px;
+			height: 150px;
+			border:1px solid red;
+			background-color: pink;
+		}
+		h2{
+			width:600px;
+			height: 200px;
+			border:1px dashed blue;
+			background-image: url(../01_html_02/img/1.ico);
+			/* 设置背景图平铺方式 */
+			background-repeat: no-repeat;
+			/* repeat 默认平铺
+			   repeat-x  水平平铺
+			   repeat-y  垂直平铺
+			   no-repeat  不平铺
+			 */
+			/* 背景图片的位置 水平位置（left center right）  垂直位置（top center bottom） */
+			/* 移动方向两个值：x y ;（xy可以为具体的像素值）
+			   center 可以写一个 */
+			background-position:center;
+			/* 背景图大小 */
+			/* 宽 高  (可以为具体值，也可以为百分比) */
+			/* background-size: 20px 20px; */
+			background-size: 100% 100%;
+		}
+		h3{
+			width:700px;
+			height: 300px;
+			border:1px dotted orange;
+			/* background-color: #33EA10;
+			background-image: url(../01_html_02/img/10.ico);
+			background-repeat: no-repeat;
+			background-position:center; */
+			/* 简化 */
+			/* 
+			background: #D18383;
+			background: url(../01_html_02/img/10.ico) no-repeat; 
+			后面的样式会把前面的样式覆盖掉
+			*/
+			background:#2B1EF3 url(../01_html_02/img/10.ico) no-repeat right bottom;
+		}
+	</style>
+</head>
+<body>
+	<h1>
+		标题一
+	</h1>
+	<h2>
+		标题二
+	</h2>
+	<h3>
+		标题三
+	</h3>
+</body>
+</html>

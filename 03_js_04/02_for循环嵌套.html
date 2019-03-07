@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for循环嵌套</title>
+	<style>
+
+	table{
+		border:1px solid red;
+	}
+	td{
+		border:1px solid #000;
+	}
+	</style>
+</head>
+<body>
+	<script>
+	for(var i =0 ; i<= 3; i++){
+		for(var j = 0 ; j<= 3 ; j++){
+			document.write(i,'-------',j,"<hr>");
+		}
+	}
+
+	//执行步骤
+	/*
+		i=0 j=0;{j++}
+		    j=1;{j++}
+		    j=2;{j++}
+		    j=3;{j++}
+		    j=4;内循环结束{i++}
+		i=1 j=0;{j++}
+		    j=1;{j++}
+		    j=2;{j++}
+		    j=3;{j++}
+		    j=4;内循环结束{i++}
+		i=2 j=0;{j++}
+		    j=1;{j++}
+		    j=2;{j++}
+		    j=3;{j++}
+		    j=4;内循环结束{i++}
+		i=3 j=0;{j++}
+		    j=1;{j++}
+		    j=2;{j++}
+		    j=3;{j++}
+		    j=4;内循环结束{i++}
+		i=4 外循环结束
+
+	 */
+	
+
+	//for循环嵌套练习：
+	//需求：生成一个3行4列的表格
+	document.write("<table>");
+	for(var i = 0; i < 3; i++){
+		document.write("<tr>");
+		for(var j=0; j< 4; j++){
+			document.write("<td>",i,"--",j,"</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+
+	//把商品信息显示到表格里
+	//标号  商品名  单价   数目
+	
+	var prolist = [
+		['001','图书','18','5'],
+		['002','iphone','4500','4'],
+		['003','苹果','8','10'],
+		['004','充电宝','60','3'],
+	];
+	document.write("<table>");
+	for(var i = 0; i < prolist.length; i++){
+		document.write("<tr>");
+		for(var j=0; j< prolist[i].length; j++){
+			document.write("<td>",prolist[i][j],"</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+
+	</script>
+</body>
+</html>

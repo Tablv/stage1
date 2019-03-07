@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.tbs{
+			width: 200px;
+			line-height: 40px;
+		}
+		.tbs td[name=col1]{
+			background: pink;
+		}
+		table .row1 td[name=col2]{
+			background: skyblue;
+		}
+
+		.tb2 .row1 td[name=col2]{
+			background: yellow;
+		}
+	
+	</style>
+
+
+</head>
+<body>
+
+	<table class="tbs" cellspacing="0" border="1px" bordercolor="red">
+		<tr class="row1">
+			<td name="col1">单元格</td>
+			<td name="col2">单元格</td>
+		</tr>
+		<tr class="row2">
+			<td>单元格</td>
+			<td>单元格</td>
+		</tr>
+	</table>
+	<br><br>
+	<table class="tbs tb2" cellspacing="0" border="1px" bordercolor="red">
+		<tr class="row1">
+			<td name="col1">单元格</td>
+			<td name="col2">单元格</td>
+		</tr>
+		<tr class="row2">
+			<td>单元格</td>
+			<td>单元格</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

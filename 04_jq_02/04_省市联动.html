@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+
+		//1.存储一下省市数组
+		var proArr = ['江苏','河南','安徽','浙江'];
+		var cityArr = [
+			['南京','无锡','常州','苏州'],
+			['郑州','开封','洛阳'],
+			['合肥','黄山','马鞍山','蚌埠'],
+			['杭州','温州','宁波市']
+		];
+		//城市组合和省份是一一对应的：下标一样
+		//把省份放到下拉列表里
+		var str='';
+		var citystr = '';
+		for(i in proArr){
+			str += "<option value="+proArr[i]+">"+proArr[i]+"</option>";		
+		}
+		$('select[name=province]').html(str);
+		//把市放到下拉列表里
+		for(i in cityArr[0]){
+			citystr += "<option value="+cityArr[0][i]+">"+cityArr[0][i]+"</option>";
+		}
+		$('select[name=city]').html(citystr);
+
+		//改变省份(触发onchange事件)
+		$('select[name=province]').change(function(){
+			//根据value内容获取城市数组的一维坐标
+			var index = proArr.indexOf($('select[name=province]').val()); 
+			//把获取的城市放到下拉列表内
+			var city = '';
+			for(i in cityArr[index]){
+				city += "<option value="+cityArr[index][i]+">"+cityArr[index][i]+"</option>"; 
+			}
+			$('select[name=city]').html(city);
+		});
+	});
+	</script>
+</head>
+<body>
+	<select name="province" id="">
+		
+	</select>省
+	<select name="city" id="">
+		
+	</select>市
+</body>
+</html>

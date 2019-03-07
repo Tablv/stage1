@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+		*{margin:0;padding:0;}
+		.left{
+			position:absolute;
+			left:0px;
+			top:30%;
+
+		}
+		.right{
+			position:absolute;
+			right:0px;
+			top:30%;
+		}
+		.pic{
+			margin:0 auto;
+			width:640px;
+			height:360px;
+			background:#804C4C;
+			position:relative;
+		}
+		.pic>img{
+			display:none;
+		}
+		.pic .showp{
+			width:640px;
+			height:360px;
+			display:block;
+		}
+		.pic p{
+			position:absolute;
+			left:35%;
+			bottom:0;
+		}
+		.pic p img{
+			display:inline-block;
+			width:20px;
+			height:20px;
+		}
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		//左按钮  索引-1  索引范围 [0-$(".pic>img").length]
+		//右按钮  索引+1  索引范围 [0-$(".pic>img").length]
+		//页面打开时，索引初始值为0
+		var index = 0;
+		$(".pic p img").click(function(){
+			$(".pic p img").attr('src','img/dian4.fw.png');
+			$(this).attr('src','img/dian3.fw.png');
+			$(".pic>img").removeClass("showp");
+			$(".pic>img").eq($(this).index()).addClass("showp");
+			//要记录当前图片的下标
+			index=$(this).index();
+		});
+		function qieTu(){
+				$(".pic p img").attr('src','img/dian4.fw.png');
+				$(".pic p img").eq(index).attr('src','img/dian3.fw.png');
+				$(".pic>img").removeClass("showp");
+				$(".pic>img").eq(index).addClass("showp");
+		}
+		$(".pic .left").click(function(){
+			if(index > 0){
+				index --;
+				qieTu();
+			}else{
+				index = $(".pic>img").length-1;
+				qieTu();
+			}
+		});
+		$(".pic .right").click(function(){
+			if(index < $(".pic>img").length-1){
+				index ++;
+				qieTu();
+			}else{
+				index = 0;
+				qieTu();
+			}
+			
+		});
+
+
+	});
+
+	</script>
+</head>
+<body>
+	<div class="pic">
+		<img src="img/57d228e7f2cb1.jpg" class="showp">
+		<img src="img/57d228e1779f9.jpg">
+		<img src="img/5832b75e9b8e7.jpg">
+		<img src="img/5836ae4baf754.jpg">
+		<img src="img/5836ae4e9bff2.jpg">
+		<img src="img/5836ae51dcd6e.jpg">
+		<span class="left">
+			<img src="img/leftjiantou1.png">
+		</span>
+		<span class="right">
+			<img src="img/rightjiantou1.png">
+		</span>
+		<p>
+			<img src="img/dian3.fw.png">
+			<img src="img/dian4.fw.png">
+			<img src="img/dian4.fw.png">
+			<img src="img/dian4.fw.png">
+			<img src="img/dian4.fw.png">
+			<img src="img/dian4.fw.png">
+		</p>
+	</div>
+</body>
+</html>

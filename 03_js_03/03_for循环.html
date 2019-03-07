@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 需求：依次输出1-10之间的数字，每个数后换行
+	// for(var i = 1; i<=100;i++){
+	// 	document.write("<p>"+i+"</p>")
+	// }
+	// var ai=[1,2,3,4,5,6,7,8,9,10];
+	// for(i in ai) {
+	// 	document.write(i);
+	// }
+	
+
+
+
+	/*
+	提供一个输入框，输入一个行号
+	在页面上显示一个有序列表
+	 */
+	// var hh = prompt("请输入一个阿拉伯数字：");
+	// console.log("输入的行号为：",hh);
+	// document.write("<ol type='A'>")
+	// for(var i=1;i<=hh;i++){
+	// 	document.write("<li>第"+i+"行！</li>")
+	// }
+	// document.write("</ol>")
+	
+	/*
+	求和运算
+	1+2+3+。。+100的和
+	 */
+	 // var sum = 0;
+	 // for(var i = 1;i<=100;i++){
+	 // 	sum += i;
+	 // }
+	 // document.write(sum);
+
+
+	 for(var i=1;i<=9;i++){
+	 	for(var j=1;j<=i;j++){
+	 		document.write(j+"*"+i+"="+j*i+"&nbsp");
+	 	}
+	 	document.write("<br>")
+	 }
+
+
+	 for(var i = 1;i<=5;i++){
+	 	for(var j=1;j<=i;j++){
+	 		document.write("*");
+	 	}
+	 	document.write("<br>")
+	 }
+
+	 for(var i=5;i>0;i--){
+	 	for(var j=1;j<=5-i;j++){
+	 		document.write("&nbsp");
+	 	}
+	 	for(var k=1;k<=2*i-1;k++){
+	 		document.write("*");
+	 	}
+	 	document.write("<br>")
+	 }
+
+	 for(var i=1;i<6;i++){
+	 	for(var j=6-i;j>0;j--){
+	 		document.write("&nbsp");
+	 	}
+	 	for(var k=1;k<=2*i-1;k++){
+	 		document.write("**");
+	 	}
+	 	document.write("<br>")
+	 }
+
+
+	</script>
+</body>
+</html>

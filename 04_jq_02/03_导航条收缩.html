@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0; padding:0;}
+	.list{
+		width:160px;
+		border:1px solid red;
+		line-height:34px;
+		margin:20px;
+	}
+	/* 一级标题dt */
+	.list dt{
+		background:#880C0C;
+		color:white;
+		text-indent:14px;
+	}
+	/* 二级标题dd */
+	.list dd{
+		border-bottom:1px dashed #AE2626;
+		text-align:center;
+	}
+	/* 如何去除每一个组合里的最后一个dd边框？ */
+	/* 点击切换 */
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		$('.list dt').prev().css('border','none');
+		$('.list dd').last().css('border','none');
+		//初始状态，隐藏所有的二级，显示第一组合
+		$('.list dd').hide();//隐藏
+		$('.list dt').eq(0).nextUntil('dt').show();
+		//点击一级标题，显示对象二级合租
+		$('.list dt').click(function(){
+			$('.list dd').hide();
+			$(this).nextUntil('dt').show();
+			console.log($(this).nextUntil('dt'));
+		});
+
+	});
+	</script>
+</head>
+<body>
+	<dl class="list">
+		<dt>家用电器</dt>
+		<dd>电视</dd>
+		<dd>空调</dd>
+		<dd>洗衣机</dd>
+		<dd>冰箱</dd>
+
+		<dt>手机数码</dt>
+		<dd>手机配件</dd>
+		<dd>数码配件</dd>
+		<dd>摄影摄像</dd>
+
+		<dt>电脑办公</dt>
+		<dd>笔记本</dd>
+		<dd>游戏设备</dd>
+		<dd>投影机</dd>
+		<dd>扫描机器</dd>
+	</dl>
+</body>
+</html>

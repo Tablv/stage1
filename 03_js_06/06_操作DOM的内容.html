@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box1{
+		border:1px solid red;
+		margin-bottom:15px;
+	}
+	.box2{
+		border:1px solid blue;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">
+		<p>桃花源记</p>
+		<p>陋室铭</p>
+	</div>
+	<div class="box2">
+		<input type="text" name="uname" value="你好"><br>
+		<input type="password" name="pass">
+	</div>
+
+	<script>
+	//获取盒子1 box1
+	var box1_obj = document.querySelectorAll(".box1");
+	console.log(box1_obj);
+	//获取盒子1的内容
+	console.log(box1_obj[0].innerHTML);
+
+		// <p>桃花源记</p>
+		// <p>陋室铭</p>
+	console.log(box1_obj[0].innerText);
+		// 桃花源记
+
+		// 陋室铭
+	//修改内容
+	box1_obj[0].innerHTML += "<font color = red>陶渊明</font>" ;
+
+	box1_obj[0].innerText += "<font color = blue>吕长杰</font>" ;
+	
+
+	//删除内容
+	// box1_obj[0].innerHTML = "";
+	// box1_obj[0].innerText = "";
+	
+
+	//获取盒子2 box2
+	var box2_obj = document.querySelector(".box2");
+	console.log(box2_obj);
+	//获取盒子的内容
+	console.log(box2_obj.innerHTML);
+
+	console.log(box2_obj.innerText);
+
+	//表单控件值：value属性
+	var uname_obj = document.querySelector('input[name=uname]');
+	console.log(uname_obj);
+	//获取value属性值
+	console.log(uname_obj.value);
+	//修改value属性值
+	uname_obj.value = "apple";
+	//删除value属性值
+	uname_obj.value = "";
+	</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+第四章  Jq
+一 jq操作DOM家族
+	从一个元素可以查找到其他的相关家族成员
+<script>
+	
+	//1.找父级
+	//selector参数，筛选指定的选择器元素
+	$(elem).parent(selector);//找爸爸
+	
+	$(elem).parents(selector);//找所有父级（爸爸、爷爷。。。祖宗），可以跨级查找
+		$('.box1').css('border','1px solid red');
+		//找box1的父级
+		$('.box1').parent().css('border','1px solid blue'); //box
+		// $('.box1').parents().css('border','1px solid orange'); //box body
+		$('.box1').parents('div').css('border','1px solid orange'); //box ,因为box是div标签
+		$('.box1').parents('.box').css('border','1px solid orange'); //box ,因为box是div标签
+
+	//2.找子级
+	$(elem).children('selector');//找儿子
+	$(elem).find('selector'); //找所有子级，可以跨级,必须加参数
+		//box2
+		$('.box2').css('border','1px solid green');
+		//找孩子
+		// $('.box2').children().css('border','2px solid pink');
+		$('.box2').find("*").css('border','2px solid purple');   //必须加参数
+
+	//3.找同级（哥哥：在元素上面的元素）prev上面的
+	$(elem).prev(selector);
+	$(elem).prevAll(selector);
+	$(elem).prevUntil(selector);
+		//找p
+		$('p').css('background','pink');
+		//找哥哥
+		// $('p').prev().css('background','#25C425'); //上一个哥哥
+		// $('p').prevAll().css('background','#08F525'); //所有的哥哥
+		$('p').prevUntil('h4').css('background','#08F525'); //找到h4就不找了，不包含H4       必须加参数
+	//4.找同级（弟弟：在元素下面的元素）next上面的
+	$(elem).next(selector);
+	$(elem).nextAll(selector);
+	$(elem).nextUntil(selector);
+	//5.找同级  不区分上下|
+	$(elem).siblings('selector');
+	
+</script>
+
+
+二 JQ 操作DOM的内容/值
+<script>
+	
+//双标记标签
+	$(elem).html();//获取内容
+	$(elem).html('内容');//设置内容
+	$(elem).html('');//清空内容
+
+	$(elem).text(); //获取内容
+	$(elem).text("内容"); //设置内容
+	$(elem).text(""); //清空内容
+//表单控件标签
+
+	$(elem).val();//获取value值
+	$(elem).val('值');//设置value值
+	$(elem).val("");//清空value值
+</script>
+
+三 JQ的效果
+<script>
+	//1.显示/隐藏
+	//显示
+	$(elem).show();
+	$(elem).show(speed[,callback]);
+	//隐藏
+	$(elem).hide(speed[,callback]);
+	//切换隐藏？显示
+	$(elem).toggle(slow/400/fast)；
+	// 参数
+	// speed ： slow/normal/fast /1000（毫秒）
+	// callback： 回调函数function(){},动画结束后，执行的事情
+	
+
+	//2 滑动 展开/收缩
+	//展开
+	$(elem).slideDown(speed,[callback])
+	// 收缩
+	$(elem).slideUp(speed,[callback])
+	// 切换展开/收缩
+	$(elem).slideToggle(speed,[callback])
+
+	//3 淡入淡出
+	//淡入
+	$(elem).fadeIn(speed,[callback])
+	//淡出
+	$(elem).fadeOut(speed,[callback])
+	// 切换淡入淡出
+	$(elem).fadeToggle('slow/400/fast', function() {
+		
+	});
+</script>
+
+自定义动画
+animate(params[,duration[,easing[,callback]]])

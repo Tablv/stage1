@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全选和反选</title>
+</head>
+<body>
+	<ul type="none">
+		<li><h4>我喜欢的体育运动是：</h4></li>
+		<li><input type="checkbox" id="all">全选</li>
+		<li><input type="checkbox" name="like">A.篮球</li>
+		<li><input type="checkbox" name="like">B.羽毛球</li>
+		<li><input type="checkbox" name="like">C.跑步</li>
+		<li><input type="checkbox" name="like">D.游泳</li>
+	</ul>
+
+
+
+
+
+	<script>
+	//需求 全选按钮 选中了：全中
+	//				取消了：全部取消
+	//给全选按钮添加单击事件
+	var all_obj = document.getElementById("all");
+	var like_obj = document.getElementsByName("like")
+	console.log(all_obj);
+	console.log(like_obj);
+	all_obj.onclick = function(){
+		//获取全选按钮的状态：选中true 取消false
+		console.log(all_obj.checked);
+		//把全选的状态值赋值给like_obj
+		for(var i in like_obj){
+			like_obj[i].checked = all_obj.checked;
+		}
+	}
+
+	</script>
+</body>
+</html>

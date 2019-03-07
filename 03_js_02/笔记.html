@@ -1,0 +1,306 @@
+第三章  JS
+一.数据类型:字符串String
+	*使用方法：
+	<script>
+	var str = "aa'bb'aa";
+	var str = 'a"b"a'
+
+	var str = "\"转义字符\""
+	</script>
+	*属性：
+		1）获取字符串长度
+	<script>
+	str.length;
+	</script>
+	*方法
+		1）查找字符 (正序) indexOf(substr[,start])
+			结果：如果找到了，返回对应的数字下标（0开始）
+				  如果没有找到，返回-1
+			<script>
+			str.indexOf(substr[, start])
+				*参数：
+					substr:查找的字符
+					start:起始位置
+			</script>
+	    2)查找字符  (倒序) lastIndexOf(substr[,start])		
+	        结果：如果找到了，返回对应的数字下标（0开始）
+				  如果没有找到，返回-1
+			<script>
+			console.log(str.lastIndexOf("个"));
+			</script>	  
+
+		3)替换 replace("找到谁","替换谁");
+		    结果：如果成功返回新字符串
+			   	  如果失败返回旧字符串
+			<script>
+				var str = "我们的国家主席：习近平";
+				// 要求把习近平替换为习大大
+				// str.replace("找到谁","替换谁");
+				// str.replace("找到谁","替换谁");
+				console.log(str);
+				str = str.replace("国家主席","小弟");
+				console.log(str);
+				console.log(str.replace("习近平","习老弟"));
+			</script>
+	
+		4)转换大写字母 toUpperCase()
+	  	5)转换小写字母 toLowerCase()
+		 <script>
+		 	var str = "LCJ nb ！";
+			console.log(str); //LCJ nb ！
+			console.log(str.toUpperCase());//LCJ NB ！
+			console.log(str.toLowerCase());//lcj nb ！
+		 </script>
+	
+二.数据类型:Number数值
+		*使用方法
+		<script>
+		var num1 = 10 ; 
+		var num2 = 3.141516;
+		var num3 = -3.1415926;
+		</script>
+
+三.运算
+	1)数学运算 + - * / %（取余/取模)
+		<script>
+		//1)定义数值变量
+		var num1 = 40;
+		console.log(num1);
+		var num2 = 3.0;  //不区分板除
+		console.log("和是",num1+num2);
+		console.log("减是",num1-num2);
+		console.log("乘是",num1*num2);
+		console.log("除是",num1/num2);
+		console.log("取余是",num1%num2); //商不带小数点的情况下，商的余数
+
+		//+特殊符号
+		//数值相加，字符相连
+		var str1 = "20";
+		var num1 = 30;
+		var num2 = 20;
+		console.log(typeof(str1));
+		console.log(str1+num1); //"20"+30  拼接
+		console.log(typeof(str1+num1));
+		str1=Number(str1);
+		console.log(typeof(str1));
+		console.log(str1+num1); //20+30
+		console.log(str1+num1+num2);
+		</script>
+	2)赋值运算 = += -= *= /+=
+		<script>
+		var num1 = 20; //把20赋值给了num1
+		var num2 = 30; //把20赋值给了num1
+		console.log(num1 , num2); // 20 30
+		num1 = 40; //把40赋值给了num1
+		console.log(num1 , num2); // 40 30
+
+		num1 += 10 ; // num1 = num1 + 10;
+		console.log(num1) // 50 30
+
+		num2 += num1; // num2 = num2 + num1
+		console.log(num1,num2) //50 80
+		num2 -= 40;  //num2 = 40
+		num1 *= 2;   //num1 = 100
+		num2 /= num1; //  num2 = num2 / num1; 
+		console.log(num2);//0.4
+		num2 = 40;
+		num1 %= num2;  // num1 = num1 % num2; 
+		console.log(num1);//20
+		</script>
+	3)自运算 ++ --
+		i++;++i; 让i+1 等同于 i+=1
+		i--;--i; 让i-1 等同于 i-=1
+
+		但是如果自运算赋值给了其他变量：
+		var i=10; var j = 10 ; 
+		var a = ++i; i:11 a:11
+		先运算（++i:11）,后赋值（把11赋值给a）
+		var b = j++; j:11 b:10
+		先赋值（把10赋值给b）,后运算（j++:11）
+		<script>
+		var num1 = 3;
+		num1++; //num1 = num1 + 1;
+		num1--; //num1 = num1 - 1;
+		++num1; //num1 = num1 + 1;
+		--num1; //num1 = num1 + 1;
+		console.log(num1);
+		for(var num2 = 30; num2 < 40; num2++){
+			console.log(num2);
+		}
+
+		//如果把自运算赋值给了其他的变量
+		//++在后，先赋值，后运算
+		//++在前，先运算，后赋值
+		var num3 = 10;
+		var num4 = 14;
+		num3++;
+		console.log(num3,num4);//11 14
+		var num5 = 20; // num3:11 num4:14 num5:20
+		num5 = num3++; 
+		//num5 = num3;
+		//num3 = num3+1;
+		console.log(num3,num4,num5);//12 14 11
+		num5 = ++num3;
+		//num3 = num3 +1;
+		//num5 = num5;
+		console.log(num3,num4,num5);//13 14 13
+		</script>
+	4)比较运算:
+		等于 ==(仅仅比较值)  ===(值相等，并且要求类型一致)
+		大于 >
+		大于等于 >=
+		小于 <
+		小于等于 <=
+		不等于 !=
+
+		比较的结果：
+		正确 true
+		错误 false
+
+	5)逻辑运算
+		1) && 和（并且）
+		2）|| 或者
+		3） ！非（否定）
+	<script>
+	逻辑和:
+		有一个错的就是错的
+	逻辑或：
+		有一个对的就是对的
+	</script>
+	<script>
+		var uname = "lcj";
+		var sex = "男";
+		var age = 18;
+
+		//要求:
+		//用户名不能超过10个长度
+		//年龄必须大于15岁
+		console.log(uname.length<10 && age>15);//true
+
+		//要求：
+		//性别可以是男 也可以是女
+		console.log(sex=="男"||sex=="女"); //true
+
+		console.log(!true);//false
+	</script>
+	*逻辑赋值时：
+	1.and符号，顺序执行 ，返回最后一个boolean值是true/1的值，如果有false/0，则直接返回false/0
+	2.or符号，顺序执行，返回最后一个boolean值是false/0的值，如果有true/1，则直接返回第一个true/1
+
+	<script>
+	//逻辑和
+	var num1 = 5+2 && 7-5 && 3 && true; //true
+	var num1 = 5+2 && 7-5 && 3 ; //3
+	var num1 = 5+2 && 0 && 3 ; //0
+	var num1 = 5+2 && false && 3 ; //false
+
+	//逻辑或
+	var num2 = 5+2 || 7-5 || 3 || true; //7
+	var num2 = 0 || 7-5 || false || true; //2
+	var num2 = 0 || 7-7 || false ; //false
+	var num2 = 7-7 || false || 0 ; //0
+	var num2 = 0 || 7-7 ; //0
+	
+	</script>
+四.数据类型:Boolean布尔类型
+	只有两个值： false/true
+
+
+五.流程语句:(条件语句)
+	描述：
+		如果满足条件，结果是什么
+		否则，结果是什么
+	<script>
+
+	if (条件) {
+		满足条件，结果是...
+	}else{
+		否则是
+	}
+
+	</script>
+
+六.数据类型转换
+	1）隐式转换
+	2）显示转换（强制转换）
+		String(值) 字符串类型强转 
+		Number(值) 数字类型强转   NaN:非数值
+		Boolean(值) 布尔类型强转
+
+	结论：空字符串转换成  boolean 类型 false， 转换为 数值类型 0
+
+	<script>
+		String(10); //'10'
+		String(true); //'true'
+
+		Number(true); //1
+		Number(false); //0
+		Number("123"); //123
+		Number("123ABC"); //NaN  -----非数值
+		Number(""); //0
+
+		Boolean("fsaf"); //true
+		Boolean(""); //false
+		Boolean(10); //true
+		Boolean(-20); //true
+		Boolean(0); //false
+
+	</script>
+
+	七.课后练习
+	1.输出结果是:
+		var str = ("12"+15)*2-10;
+		console.log(str);
+		2420
+	2.var a = 10;
+		var b += a; b = b + a 
+		var c = ++b; c = b+1
+		console.log(b);
+	3.在页面上提供一个输入框:输入姓名
+		要求:不能包含特殊符号@
+			提示文字输出到页面上
+		<script>
+		var name = prompt("输入姓名");
+		if(name.indexOf("@") != -1){
+			document.write("名字中不能带有@");
+		}else{
+			document.write("名字可以使用！")
+		}
+		</script>
+	4.在页面上提供一个输入框:输入一个年份
+		判断是闰年还是平年？
+		<!-- 闰年的条件：
+			能被4整除但是不能被100整除
+			或者
+			能直接被400整除
+		 -->
+		<script>
+		var year = prompt("输入一个年份");
+		if((year % 4 == 0 && year % 100 != 0 ) || year % 400 == 0){
+			document.write(year+"是闰年！");
+		}else{
+			document.write(year+"是平年！");
+		}
+		</script>
+	5.以下结果是?
+		var str = "";
+		if(!str){
+			console.log("红色");
+		}else{
+			console.log("蓝色");
+		}
+		红色
+	6.输出结果是?
+		var a = 10;var b = 1;
+		if(a=0 && b--){
+			console.log("白色");
+		}else{
+		 	console.log("黑色");
+		}
+		结果输出____黑色______
+		if(a-=10 || ++b){
+			console.log("白色");
+		}else{
+			console.log("黑色");
+		}
+		结果输出____白色______

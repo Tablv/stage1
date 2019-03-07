@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪选择器</title>
+	<style>
+	
+		div p{
+			border:1px solid red;
+		}
+	  	div p:first-child{
+			width:400px;
+			background:pink;
+		}
+		div p:last-child{
+			width:100px;
+			background:yellow;
+		}
+		div p:nth-child(2){
+			width:200px;
+			background:orange;
+		}
+		.list{
+			border:1px solid blue;
+			width:140px;
+			line-height:40px;
+			padding-left:0;
+		}
+		.list li{
+			border-bottom:1px dashed blue;
+			list-style-position:inside;
+		}
+		.list li:last-child{
+			border-bottom:0;
+		}
+		.article{
+			width:100px;
+			border:2px solid blue;
+		}
+		.article:first-line{
+			color:red;
+			line-height:20px;
+		}
+		.article:first-letter{
+			font-size: 20px;
+		}
+		input[name=uname]:focus{
+			background:#6DEF9A;
+		}
+		input[name=upass]:focus{
+			background:#F57676;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<input type="text" name="uname"><br>
+	<input type="password" name="upass"><br>
+	<div>
+<!-- 		<strong>你好</strong>
+ -->		
+ 		<p>段落一</p>
+		<p>段落二</p>
+		<p>段落三</p>
+	</div>
+	<ul class="list">
+		<li>图书</li>
+		<li>服装</li>
+		<li>动漫</li>
+		<li>画具</li>
+		<li>玩具</li>
+	</ul>
+
+	<div class="article">
+		你好啊，西喜爱你好啊，西喜爱你好啊，西喜爱你好啊，西喜爱你好啊，西喜爱你好啊，西喜爱你好啊，西喜爱
+	</div>
+</body>
+</html>

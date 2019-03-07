@@ -1,0 +1,121 @@
+第二章  CSS
+一：CSS样式：文本/文字
+	1）font-size:16px; 文字大小
+	2）font-family:"宋体";文字字体（值必须放在引号里面，单、双引号都行）
+	3）color:red;文字颜色
+	
+	4）font-weight:bold/bolder/normal
+				   加粗/更粗/正常（去除加粗）
+	5) font-style:italic/normal
+				  倾斜/正常（去除倾斜）
+	6）text-decoration:underline;下划线
+	                   line-through;删除线
+	                   overline;上划线
+	                   none;无（去除线条）
+	7）text-align:left/center/right
+		水平对齐方式：左中右
+	8）text-indent:16px/2em(em:倍数单位，以文字为单位);  首行缩进
+	9）line-height:200px;  行高
+		补充：行高=高度（单行文本垂直居中）
+	
+	10）word-spacing:10px; 单词间距(英文)
+	11）letter-spacing:10px; 字符间距
+
+二：CSS样式：列表
+	1）列表符号类型
+	list-style-type:circle/square/none/upper-alpha;
+					空心圆/矩形块/无/(转换成了有序A)
+	2)列表符号位置(默认outside，参考位置li)
+		list-style-position:inside/outside; 
+		 	inside:里面;
+		 	outside：在外边（默认） 
+	     
+	3）定义列表符号为图片
+		list-style-image: url(../01_html_03/biaoji.img);
+	简化：
+		list-style: square inside;
+		list-style:url(../01_html_03/biaoji.img) inside;
+		两个值：类型  位置 
+三：CSS样式：显示/隐藏（显示方式）
+	1）display:inline;行元素
+	*特征：
+		无宽高,不能设置宽高，内容有多少，他大小就有多少
+		不会换行
+	*标签：a,font,b,i,u....
+	--------------------------------------
+	2）display:block;块元素
+	*特征：
+		有宽高
+		会换行
+	*标签：p，h1-h6,ul,ol,li,table....
+	--------------------------------------
+	3）display:inline-block;行内块元素
+	*特征：
+		有宽高
+		不会换行
+	*标签：img,input,select,textarea....
+	--------------------------------------
+	4）display:none;不显示（隐藏）
+	*特征：
+		不占位置
+	--------------------------------------
+	显示方式是可以相互转换的
+
+四、CSS样式：显示/隐藏（显示状态）
+	1）visibility:visible;显示
+	2）visibility:hidden;隐藏
+	*特征：
+		占位置
+五、CSS样式：显示/隐藏（透明度）
+	1）opacity:0-1;
+	   	opacity:0;隐藏（完全透明）
+		*特征：
+			占位置
+		opacity:1;显示（完全显示）
+
+六、CSS选择器
+	1）作用：匹配标签元素
+	2）基本选择器
+	 1.标签选择器
+	 <style>
+		标签名{}
+		如
+		body{}、p{}
+	 </style>
+	 2.id选择器
+	 <p id="idName"></p>
+	 <style>
+		#idName{}
+	 </style>
+	 3.class类选择器
+	 <p class="className"></p>
+	 <style>
+		.className{}
+	 </style>
+	 4.属性选择器
+	 <style>
+	 /* input标签中属性名name=uname */
+	 	选择器名[属性名=属性值]{}
+	 	选择器名[属性名=属性值][属性名=属性值]...{}
+		input[name=uname]{}
+		input[name=uname][type=text]{}
+	 </style>
+	 5.通配选择器(匹配所有的标签元素)
+	 <style>
+		*{}
+	 </style>
+
+七、CSS选择器：伪选择器1
+	1）：link  默认链接状态（可以省略）
+	2）：hover 鼠标经过时
+	3）：active 鼠标按下与释放之间
+	4）：visited 被访问过后
+
+
+练习:css第二天课件
+1.纵向导航
+2.课下作业 版本1/版本2
+
+
+预习:
+div盒子（布局）

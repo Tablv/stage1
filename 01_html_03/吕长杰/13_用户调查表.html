@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户调查表</title>
+</head>
+<body>
+	<form action="">
+	<table border="1" bordercolor="#000" width="400" align="center">
+		<caption><font size="20" color="#000" face="宋体">用户调查表</font></caption>
+		<tr>
+			<td>姓名:</td>
+			<td><input type="text" placeholder="请输入真实姓名！" size="45"></td>
+		</tr>
+		<tr>
+			<td>性别:</td>
+			<td>
+				<input type="radio" name="sex">男
+				<input type="radio" name="sex">女
+				<input type="radio" name="sex">保密
+			</td>
+		</tr>
+		<tr>
+			<td>出生日期:</td>
+			<td>
+				<select name="YY">
+					<option value="1991">1991</option>
+					<option value="1992">1992</option>
+					<option value="1993">1993</option>
+					<option value="1994">1994</option>
+					<option value="1995">1995</option>
+				</select>
+				<select name="MM">
+					<option value="1-6">1~6</option>
+					<option value="7-17">7~12</option>
+				</select>
+				<select name="DD">
+					<option value="1-15">1~15</option>
+					<option value="15-">15~</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>家庭地址:</td>
+			<td>
+				<select name="sheng">
+					<option value="jiangsu">江苏省</option>
+					<option value="shandong">山东省</option>
+				</select>
+				<select name="shi">
+					<option value="huaian">淮安市</option>
+					<option value="jinan">济南市</option>
+				</select>
+				<select name="qu">
+					<option value="huaiyin">淮阴区</option>
+					<option value="lixia">历下区</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>兴趣爱好:</td>
+			<td>
+				<input type="checkbox" name="like">音乐
+				<input type="checkbox" name="like">篮球
+				<input type="checkbox" name="like">游泳
+				<input type="checkbox" name="like">其他
+			</td>
+		</tr>
+		<tr>
+			<td>本人照片:</td>
+			<td><input type="file"></td>
+		</tr>
+		<tr>
+			<td>本人简介:</td>
+			<td><textarea cols="30" rows="2"></textarea></td>
+		</tr>
+		<tr align="center">
+			<td colspan="2">
+				<input type="submit" value="提交">
+				<input type="reset" value="取消">
+			</td>
+			
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,136 @@
+第三章 JavaScript
+一、认识JavaScript
+	1)js和HTML和css的关系
+	  HTML:提供标签元素
+	  css:美化标签元素
+	  js:完成用户和元素的互动(可以操作HTML和css)
+	2)具体实现效果
+		①:可以获取时间，实现时间操作(动态时间)
+		②:轮播图
+		③:表单验证
+		④:页面动画
+	3)JavaScript是什么?
+		定义:是一门客户端脚本语言
+		运行:浏览器里运行
+	4)文件类型: .js(index.js)
+	5)历史:到目前为止，js是web前端非常重要，必不可少的一门语言
+
+
+二、JavaScript包含什么?
+	1)ECMAScript语法
+		ECMA:欧洲计算机制造商协会
+		提供了js语法的基础应用规范
+
+	2)js对DOM的操作
+		操作HTML标签元素
+
+	3)js对BOM的操作
+		操作浏览器对象
+
+三、ECMAScript语法基础
+	1.命名规范
+		1)严格区分大小写
+		2)名字可以以字母、数字、下划线、$组合，但是不能以数字开头
+		3)避免使用关键字
+		另外:
+			小驼峰:userName
+			大驼峰:UserName
+	2.js语句(输出语句)
+		1)弹框语句
+			alert("语句内容");
+		2)输出到页面上
+			document.write("语句内容");
+		3)输出在控制台console菜单里
+			console.log("语句内容");
+		4)弹框(带一个输入框)
+			prompt("提示输入的内容");
+		5)弹框(确认窗口)
+			confirm("提问信息?")
+	3.js语句书写位置
+		1)行内:
+		可以写在HTML页面的标签"事件属性"里
+		<p onclick="js语句"></p>
+		2)内联:
+		可以写在<script></script>标签里
+		<script>
+			js语句
+		</script>
+		3)外部:
+		写在外部js文件里
+			新建index.js文件
+			链接js文件:<script src="index.js"></script>
+		4)写在浏览器(F12-console)菜单里(仅供测试使用)
+四、js语法基础:数据类型
+	1)存储数据操作:变量(变化的量)
+		比如:用户名、密码、手机号是不一样的用"变量"存储起来
+	2)怎么使用变量?
+		1.声明变量(遵守js语法规范)
+		<script>
+			var 变量名;
+		</script>
+		2.存储信息(把信息存储到变量里)
+		<script>
+			变量名 = 值;
+			aa = "小明";
+			bb = "男";
+		</script>
+
+		合并操作:
+		<script>
+			var cc = "吃饭";
+			var dd ="南京市";
+		</script>
+		3.显示到浏览器里给用户看
+		<script>
+			document.write(变量名);
+			console.log(变量名);
+		</script>
+	3)数据类型一:字符串String
+	  -语法格式(放在引号里):"值" '值' 
+	  -应用:
+	  <script>
+	  	var str1 = "我学习中国";
+	  	var str2 = '我来自汉语';
+	  </script>
+	引号嵌套问题
+	  <script>
+	  	var aa = "无'序列'表"
+		console.log(aa);
+	
+		var bb = '无"序列"表'
+		console.log(bb);
+
+		//转义字符
+		var cc = "无\"序列\"表"
+		console.log(cc);
+
+		var dd = '无\'序列\'表'
+		console.log(dd);
+	  </script>
+
+	 多值连接:
+	 <script>
+	 	//1)用"+"
+	 	var str1 = "我的名字是";
+	 	var uname = "apple";
+	 	var myself = str1+uname;
+	 	document.write(myself);
+	 	document.write(str1+uname);
+	 	//2)用","--只能在语句里面使用
+	 	document.write(str1,uname);
+	 </script>
+	4)字符串操作:
+	属性:
+		1.获取长度属性:字符串.length
+	方法:
+		1.查找字符
+
+预习：
+1.string方法
+2.数据类型number：运算
+
+练习：
+1.北青：文章详情页+1个页面
+2.apple官网页面
+3.博雅网站
+(周五放学之前交)

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>王者荣耀</title>
+	<style>
+	*{
+		margin:0 auto;
+		padding:0;
+	}
+	/* 背景 */
+	.bck{
+		margin-top:60px;
+		background:#DBDEE7;
+		width:1200px;
+		height:600px;
+		text-align: center;
+	}
+	/* 内容 */
+	.bck .content{
+		height:600px;
+		width:1100px;
+		position:relative;
+	}
+	/* 大照片 */
+	.bck .content>img{
+		height:600px;
+		width:1100px;
+		display:none;
+		z-index:1;
+	}
+	.bck .content .c_img_first{
+		display:block;
+	}
+	/* 左边信息栏 */
+	.content .show{
+		width:330px;
+		height:600px;
+		display:block;
+		background:#1D557C;
+		position:absolute;
+		top:0;
+		opacity:0.9;
+	}
+	.content .show ul{
+		list-style:none;
+		padding:0;
+		text-align:left;
+		font-size:1em;
+		margin:20px 0;
+		margin-left:30px;
+		color:#00999A;
+	}
+	.content .show li{
+		margin:20px 0;
+		font-weight: bold;
+	}
+	.content .show ul li:first-child{
+		color:#00999A;
+		font-size:2em;
+	}
+	.content .show ul li:nth-child(2){
+		color:#fff;
+		font-size:4em;
+	}
+	.content .show ul li:nth-child(3){
+		color:#fff;
+		font-size:3em;
+	}
+	.content .show ul li:nth-child(8){
+		color:#CFD437;
+	}
+	.content .show ul li:last-child{
+		color:#fff;
+		font-size:2em;
+		margin-right:100px;
+		margin-top:30px;
+		border:3px solid #fff;
+		border-radius: 20px;
+		text-align:center;
+	}
+	.content .show li span:first-child{
+		background:#003333;
+		padding:2px;
+	}
+	.content .show li span:nth-child(2){
+		width:100px;
+		background:#003333;
+		height:5px;
+	}
+	/* 右下方信息栏 */
+	.bottom{
+		width:660px;
+		height:100px;
+/* 		background:#481E1E; */
+		color:#fff;
+		font-weight:bold;
+		position:absolute;
+		right:0;
+		bottom:0;
+	}
+
+	.content .bottom p{
+		margin:0 10px;
+		display:inline-block;
+		float:right;
+		line-height:50px;
+		width:55px;
+		height:100px;
+	}
+	.content .bottom>p:first-child{
+		width:30px;
+		height:55px;
+		line-height:25px;
+		margin-right:0;
+		background:#009BA4;
+		border-radius: 20% 0 0 20%;
+	}
+	.content .bottom p img{
+		margin:0;
+		display:block;
+		width:55px;
+		height:55px;
+	}
+	
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		//存储数据
+		nekArr = ['机关造物','暗夜萝莉','逍遥梦幻','伊势巫女','魅惑之狐','断案大师','鲜血枭雄','青莲剑仙'];
+		nameArr = ['鲁班七号','安琪拉','庄周','大乔','妲己','狄仁杰','曹操','李白'];
+		proArr = ['法师','法师','弟弟','哈哈','哦哦','法师','呵呵','刺客'];
+		takArr = [
+					'鲁班大师，智障250，膜拜，忌惮膜拜。',
+					'生命就像人家的魔法书，涂涂改改又是一年',
+					'蝴蝶是我，我就是蝴蝶',
+					'守望着天空，大海，和你的回忆。',
+					'为什么会痛苦，一直微笑就好了',
+					'以陛下的名义，你被捕了',
+					'宁叫我负天下人',
+					'一篇诗，一斗酒，一曲长歌，一剑天涯'
+				];
+		// 初始状态下 应该是隐藏的
+		for(var i=1;i<$('.bottom p').length/2;i++){
+			$('.bottom p').eq(i).hide();
+		}
+		$('.bottom p img').click(function(){
+			var index = $('.bottom p').length - $(this).parent().index()-1;
+			$(".content>img").removeClass('c_img_first');
+			$(".content>img").eq(index).addClass('c_img_first');
+			$(".content .show ul li").first().text(nekArr[index]);
+			$(".content .show ul li").eq(1).text(nameArr[index]);
+			$(".content .show ul li").eq(2).text(proArr[index]);
+			$(".content .show ul li").eq(7).text(takArr[index]);
+		});
+		
+		$('.bottom p:first').click(function(){
+			for(var i=1;i<$('.bottom p').length/2;i++){
+				$('.bottom p').eq(i).toggle();
+			}
+		});
+	});
+
+	</script>
+</head>
+<body>
+	<div class="bck">
+
+		<div class="content">
+			<div class="show">
+			<ul>
+				<li>机关造物</li>
+				<li>鲁班七号</li>
+				<li>法师</li>
+				<li><span>生存能力</span></li>
+				<li><span>攻击伤害</span></li>
+				<li><span>技能效果</span></li>
+				<li><span>上手难度</span></li>
+				<li>鲁班大师，智障250，膜拜，忌惮膜拜。</li>
+				<li>播放语音</li>
+			</ul>
+			</div>
+
+			<img src="img/b_1.jpg" class='c_img_first'>
+			<img src="img/b_2.jpg">
+			<img src="img/b_3.jpg">
+			<img src="img/b_4.jpg">
+			<img src="img/b_5.jpg">
+			<img src="img/b_6.jpg">
+			<img src="img/b_7.jpg">
+			<img src="img/b_8.jpg">
+			
+			<div class="bottom">
+				<p>皮<br>肤</p>
+				<p><img src="img/s_8.jpg">李白</p>
+				<p><img src="img/s_7.jpg">曹操</p>
+				<p><img src="img/s_6.jpg">狄仁杰</p>
+				<p><img src="img/s_5.jpg">妲己</p>
+				<p><img src="img/s_4.jpg">大乔</p>
+				<p><img src="img/s_3.jpg">庄周</p>
+				<p><img src="img/s_2.jpg">安琪拉</p>
+				<p><img src="img/s_1.jpg">鲁班七号</p>
+			</div>	
+		</div>
+		
+	</div>
+</body>
+</html>

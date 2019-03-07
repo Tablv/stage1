@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环练习</title>
+	<style>
+	.oushu{
+		background:pink;
+	}
+	.jishu{
+		background:skyblue;
+	}
+	
+	</style>
+</head>
+<body>
+	<script>
+		//练习1：输出一个6行3列的表格
+		// 背景色偶数行pink，奇数行skyblue
+		document.write("<table>")
+		for(var i =1 ; i<=6;i++){
+			if(i % 2 == 0 ){
+				document.write("<tr class='oushu'>")
+			}else{
+				document.write("<tr class='jishu'>")
+			}
+			for(var j=1;j<=3;j++){
+				document.write("<td>",i,"---",j,"</td>");
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+
+		// 练习2 输出一个9*9乘法口诀表（附图）
+		document.write("<table>")
+		for(var i =1 ; i<=9;i++){
+			document.write("<tr>")
+			for(var j=1;j<=i;j++){
+				document.write("<td>",j,"*",i,"=",j*i,"</td>");
+			}
+			document.write("</tr>")
+		}
+		document.write("</table>")
+
+		// 练习3 输出一个金字塔结构
+		//1     *
+		//2    ***
+		//3   *****
+		//4  *******
+	 //   5 *********
+	 	for(var i=1;i<6;i++){
+	 		for(var k=0;k<=5-i;k++){
+	 			document.write("<font color='#fff'>.</font>");
+	 		}
+	 		for(var j = 1 ; j<=2*i-1;j++){
+	 			document.write("*");
+	 		}
+	 		document.write("</br>");
+	 	}
+
+
+	 //    练习4 输出3位水仙花数，并计算有几个？
+	 //    什么是水仙花数?譬如 245是水仙花数
+	 //    那么 245 = 2*2*2 + 4*4*4 + 5*5*5
+	 	var count = 0;//计数器
+	 	for(var i = 100;i<=999;i++){
+	 		var j = String(i);//强转成字符串，拿百十个位数
+	 		if(j[0]*j[0]*j[0]+j[1]*j[1]*j[1]+j[2]*j[2]*j[2]==j){
+	 			document.write(j+"&nbsp;");
+	 			count++;
+	 			}
+	 	}
+	 	document.write("水仙数的个数有："+count+"个！<br>");
+
+
+	 	var num = prompt("请输入一个三位自然数:");
+	 	//预防不是三位数，以及小数点
+	 	if(num.length == 3 && String(num).indexOf(".") == -1){
+	 		if(num[0]*num[0]*num[0]+num[1]*num[1]*num[1]+num[2]*num[2]*num[2]==Number(num)){
+	 		alert("这是一个水仙数！");
+	 		}else{
+	 		alert("这不是一个水仙数！")
+	 		}
+	 	}else{
+	 			alert("这根本就不是一个三个自然数，你个大骗子")
+	 		}
+	 	
+	 //    拓展：百钱买百鸡  100元钱买100只鸡
+	 //    公鸡5元一只，母鸡3元一只，小鸡1元3只，问：
+	 //    能买公鸡多少只？ 母鸡多少只？小鸡多少只？
+	 //    共有几种买法？
+	 
+	 /*
+	 	i 公鸡 最大20只
+	 	j 母鸡 最大34只
+	 	k/3 小鸡 最大300只
+	  */
+	    var count = 0;
+		for(var i=0;i<20;i++){
+			for(var j=0;j<34;j++){
+				for(var k = 0;k < 100; k=k+3){
+					if(i+j+k == 100 && 5*i + 3*j + k/3 ==100){
+						document.write("公鸡",i,"只","，母鸡",j,"只","，小鸡",k,"只<br>");
+						count ++;
+					}
+				}
+			}
+		}
+		document.write("一共有"+count+"种买法！")	 
+
+
+	</script>
+</body>
+</html>

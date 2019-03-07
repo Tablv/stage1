@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		background:#000;
+		color:#fff;
+	}
+	h2.pos_left
+	{
+	position:relative;
+	left:-20px
+	}
+	h2.pos_right
+	{
+	position:relative;
+	left:20px
+	}
+	h2.pos_abs{
+	position:absolute;
+	left:100px;
+	top:150px;
+	}
+	p.one{
+		position:fixed;
+		left:200px;
+		top:200px;
+	}
+	p.two{
+		position:fixed;
+		left:150px;
+		top:150px;
+	}
+	img{
+		position:absolute;
+		bottom:0;
+		/* clip:rect(10px 100px 100px 10px); */
+
+	}
+	.test{
+		width:800px;
+		background:#612D2D;
+		position:relative;
+		left:50px;
+	}
+	.test:after{
+		content:"";
+		display:block;
+		clear:both;
+	}
+	.test_left{
+		width:300px;
+		height:300px;
+		background:#1E6E29;
+		position:relative;
+		top:-30px;
+		left:20px;
+	}
+	.test_right{
+		width:300px;
+		height:300px;
+		background:#0F35CB;
+		position:absolute;
+		left:0px;
+		top:0px;
+		}
+	.f1_right{
+		width:300px;
+		height:300px;
+		background:#CB17BB;
+		float:left;
+		clear:both;
+	}
+	.f2_right{
+		width:300px;
+		height:300px;
+		background:#9208E4;
+		float:left;
+	}
+	.f3_right{
+		width:300px;
+		height:300px;
+		background:#79CF0A;
+		float:left;
+	}
+	</style>
+</head>
+<body>
+	
+
+	<div class="test">
+	<!-- <div class="test_left"></div>
+	<div class="test_right"></div>
+ -->
+
+
+	<div class="f1_right"></div>
+	<div class="f2_right"></div>
+	<div class="f3_right"></div>
+	</div>
+	
+	
+</body>
+</html>

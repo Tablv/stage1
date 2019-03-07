@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 写标签 -->
+	<ul class="list" id="list_1" type = "circle">
+		<li>体育</li>
+		<li>足球</li>
+		<li>篮球</li>
+		<li>乒乓球</li>
+		<li>羽毛球</li>
+	</ul>
+
+	<input type="text" name="uname" maxlenght="5">
+	<script>
+	//获取ul标签
+	var ul_obj = document.querySelector(".list");
+	console.log(ul_obj);
+	//获取属性
+	console.log(ul_obj.id,ul_obj.type);
+	//修改属性
+	ul_obj.type = "square";
+
+	ul_obj.title = "我喜欢的体育运动";
+
+	//删除属性
+	ul_obj.title = '';
+
+	//属性的方法应用
+	//1）获取input标签
+	var input_obj = document.querySelector("input");
+	console.log(input_obj);
+	//2) 获取属性
+	console.log(input_obj.getAttribute("type"));
+	//3)修改属性、设置
+	input_obj.setAttribute("value", "用户名");
+
+	//4)删除属性
+	input_obj.removeAttribute("maxlenght");
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+第三章 JS
+一.DOM事件应用
+	事件：DOM元素触发的一个事情，就叫做事件
+	属于DOM属性
+	1）事件名称
+		1.单击事件 onclick
+		2.失去焦点 onblur   (主要应用于表单元素)
+		3.获得焦点 onfocus  (主要应用于表单元素)
+		4.输入事件 oninput  (主要应用于输入框input与textarea)
+		5.改变内容 onchange（主要应用于下拉列表）
+		6.加载完成 onload
+	2）怎么添加事件?
+		方法1：直接在标签里添加事件属性
+		<p onclick="alter('单击事件');"></p>
+		<p onclick="fun1()"></p>
+		<script>
+		//当p触发点击事件：去做的事情
+		function fun1(){
+			//事情的执行过程
+		}
+		</script>
+		方法2：在js里给标签添加事件属性
+		<div id="box1"></div>
+		<script>
+		var box1_obj = document.getElementById("box1");
+		box1_obj.onclick = function(){
+			// box1_obj单击事件要执行的过程
+		}
+		</script>
+
+二.MouseEvent对象和this对象
+	1.MouseEvent对象：鼠标事件对象
+		记录了鼠标操作的相关信息
+		-----目标标签元素
+		.event.srcElement
+		.event.target
+	2.this对象：是一个指针，指向调用函数的对象
+	<script>
+	var li_obj = document.querySelectorAll("ul li");
+
+	for(var i =0 ; i < li_obj.length;i++){
+		li_obj[i].onclick = function(event){
+			//当前被点击的这个标签是谁
+			event.srcElement;
+			// 或者
+			event.target;
+			// 或者
+			this;
+			//这三个都可以拿到当前对象
+		}
+	}
+
+	</script>
+三.表单对象简化应用
+	<script>
+	document.forms; //数组
+	document.forms[下标]; 
+	document.forms[0]; //下标是0的表单
+	document.forms['formName'];//指定name = formName的表单
+
+	表单里的控件元素
+	document.forms['formName']['uname'];
+	// 控件name=uname的标签元素
+
+	document.forms['login'].children  //表单的子节点
+	</script>

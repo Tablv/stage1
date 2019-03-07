@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>应用jq文件</title>
+	<!-- 1）引入jq文件 -->
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	window.onload = function(){
+	console.log('onload加载完成');
+
+	//1)用户名
+	//用原生js的方式
+	var uname = document.querySelector("input[name=uname]");
+	console.log(uname);  //null
+	//2）密码
+	//用jq方式
+	console.log($("input[name=upass]"));
+	//加载事件，将上面内容放到加载事件后
+	}
+
+
+	//jq的加载事件 onready()
+	jQuery(document).ready(function($) {
+		console.log('jq的加载事件应用1')
+
+	});
+	//写法2
+	$(document).ready(function(){
+		console.log('jq的加载事件写法2');
+	});
+	//写法3
+	$(function(){
+		console.log('jq的加载事件写法3');
+	});
+	</script>
+</head>
+<body>
+	<div id="box1">
+		红盒子
+
+	</div>
+	<div class="box2">
+		蓝盒子
+	</div>
+	<form action="">
+		<input type="text" name="uname"><br>
+		<input type="password" name="upass">
+	</form>
+	<script>
+
+	//js 操作DOM
+	
+	var box1  = document.getElementById("box1");
+	console.log(box1);
+
+
+	</script>
+	
+	<!-- 写自己的js -->
+	<script>
+	//原生js
+	var box2 = document.querySelector(".box2");
+	console.log(box2);
+	//用jq方式
+	var box2_jq = $(".box2");
+	var box1_jq = $("box1");
+	console.log(box2_jq); //数组
+	console.log(box1_jq);
+	</script>
+</body>
+</html>

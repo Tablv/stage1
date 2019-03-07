@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+	<style>
+		
+
+		/* 类选择器 */
+		.p1{
+					color: #0058CF;
+					border:4px solid green;
+				} 
+	
+
+		/* 标签选择器 */
+		p{
+			width: 500px;
+			height: 80px;
+			border:3px solid #7553FA !important;
+			text-align: center;
+			line-height: 80px;
+			font-size: 30px;
+		}
+
+		/* !important>style行内样式>id选择器>属性选择器>class类>标签>*通配符选择器 */
+
+
+		/* 属性选择器 */
+		p[name=p2]{
+			border:3px dotted blue;
+		}
+
+		/* id选择器 */
+		#p3{
+			border:3px dashed orange;
+		}
+		
+		*{
+			border:3px groove red;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<p class="p1" name="p2" id="p3" style="border:3px solid black;">
+		圣诞节
+
+	</p>
+</body>
+</html>

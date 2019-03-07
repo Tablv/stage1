@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		body{
+			border: 3px dotted purple;
+		}
+		.row1{
+			height: 60px;
+			background: #FFDE96;
+		}
+		.row2{
+			width:1000px;
+			height: 40px;
+			background: #B5CBFF;
+			margin:0 auto;
+
+		}
+		.col1{
+			width:300px;
+			height: 800px;
+			border:2px solid green;
+			/* 浮动定位 */
+			float: left;
+		}
+		.col2{
+			width: 500px;
+			height: 500px;
+			border: 2px solid red;
+			float: right;
+		}
+		.box{
+			width:500px;
+			height: 200px;
+			background: yellow;
+			border: 5px solid orange;
+			/* 清除浮动影响 */
+			clear: both;
+		}
+		
+	</style>
+
+
+</head>
+<body>
+	
+	<div class="row1"></div>
+	<div class="row2"></div>
+
+	<div class="col1"></div>
+	<div class="col2"></div>
+	<div class="box"></div>
+
+</body>
+</html>

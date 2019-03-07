@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数应用</title>
+</head>
+<body>
+	<script>
+	// 生成一个4行的有序列表
+	document.write("<ol>");
+	for(var i = 1 ; i<=4;i++){
+		document.write("<li>",i,"</li>");
+	}
+	document.write("</ol>")
+
+	// 生成一个段落标签，里面有5个a标签
+	document.write("<p>");
+	document.write("<a href='#'>首页</a>")
+	document.write("<a href='#'>国内旅游</a>")
+	document.write("<a href='#'>国际旅游</a>")
+	document.write("<a href='#'>海外直飞</a>")
+	document.write("<a href='#'>港澳台</a>")
+	document.write("</p>");
+
+	document.write("<ol>");
+	for(var i = 1 ; i<=4;i++){
+		document.write("<li>",i,"</li>");
+	}
+	document.write("</ol>")
+
+	//定义抽象出一个函数  createList  
+	//作用：创建有序列表  
+	//参数：num  有序列表行数
+	//参数：listType 有序列表类型
+	function createList(num){
+		document.write("<ol>");
+		for(var i = 1 ; i<=num;i++){
+			document.write("<li>",i,"</li>");
+		}
+		document.write("</ol>")
+	}
+	
+
+
+
+	createList(5);
+	</script>
+</body>
+</html>

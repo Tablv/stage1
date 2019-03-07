@@ -1,0 +1,125 @@
+第三章  JS
+一.JS对象：MAth对象（数学对象）
+	<script>
+	//Math对象
+	//属性
+	console.log(Math.PI); //3.141592653589793
+
+	//方法
+	//1）返回 x 和 y 中的最高值
+	console.log(Math.max(10,15,12,13,16,14,19)); //19  
+	//2) 返回 x 和 y 中的最低值
+	console.log(Math.min(10,15,12,13,16,14,19)); //10  
+	//3) 返回 x 的 y 次幂
+	console.log(Math.pow(2,3)); //8
+	//4) random() 返回 0 ~ 1 之间的随机数
+	console.log(Math.random());  //0~1之間的小數
+	//5) 四捨五入
+	console.log(Math.round(3.12)); //3 
+	console.log(Math.round(3.56)); //4 
+	//6) 对 数 进行上舍入(向上取整)，取比他大的整数
+	console.log(Math.ceil(14.35)); //15 > 14.35
+	console.log(Math.ceil(14.05)); //15 > 14.05
+	console.log(Math.ceil(-14.56)); //-14 > -14.56
+	//7) 对 数 进行下舍入(向下取整)，取比他小的整数、
+	console.log(Math.floor(14.35)); //14 < 14.35
+	console.log(Math.floor(14.05)); //14 < 14.05
+	console.log(Math.floor(-14.56)); //-15 < -14.56
+
+	</script>
+	拓展问题：
+	<script>
+	//如何获取任意一个区间范围的随机数？
+	//30-80 70-60 120-160
+	</script>
+二.JS对象：Date对象（日期对象）
+	<script>
+	//1) 获取一个日期对象
+	var taday = new Date();
+	console.log(taday,typeof(taday));  //打印的当前本地计算机打开的时间
+	//Fri Jan 11 2019 11:44:44 GMT+0800 (中国标准时间) "object"
+	//周五 1月 11号 2019 年  11时44分44秒 时区(东八区)   object类型
+	//2）提取某一个信息
+	console.log(taday.getDate()); //11  从 Date 对象返回一个月中的某一天 (1 ~ 31)
+	var day = taday.getDate();
+	console.log(taday.getMonth()); //0 从 Date 对象返回月份 (0 ~ 11)对应1-12月
+	var month = taday.getMonth();
+	console.log(taday.getYear()); //119 请使用 getFullYear() 方法代替。
+	console.log(taday.getFullYear());// 2019 从 Date 对象以四位数字返回年份。
+	var year = taday.getYear();
+	console.log(taday.getDay()); //5 从 Date 对象返回一周中的某一天 (0 ~ 6) 对应 【日-6】
+	var week = taday.getDay();
+	console.log(taday.getHours());    //时
+	var h = taday.getHours();
+	if(h<10){ h = '0' + h}
+	console.log(taday.getMinutes());  //分
+	var m = taday.getMinutes();
+	if(m<10){ m = '0' + m}
+	console.log(taday.getSeconds());  //秒
+	var s = taday.getSeconds();
+	// if(s<10){ s = '0' + s}
+	s<10?s = '0' + s:s;
+
+	var arr = ['日','一','二','三','四','五','六']; 
+
+	//格式：xxxx年xx月xx日 周几 xx:xx:xx
+	var str = taday.getFullYear()+"年"+(taday.getMonth()+1)+"月"+taday.getDate()+"日 周"+arr[taday.getDay()]+" "+taday.getHours()+":"+taday.getMinutes()+":"+s;
+	console.log(str);
+	document.write(str);
+	</script>
+	拓展：
+	<script>
+		//2)getTime() 返回1970年1月1日至今的毫秒日
+		//一秒  = 1000毫秒
+		//一分钟 = 60 秒
+		//一小时 = 60 分钟
+		//一天 = 24 小时
+		console.log(today.getTime()); //1547188840497  --绝对秒
+		console.log(time.getTime());  //1569859200000
+
+		//练习    活动倒计时  
+		//距离死亡日期还有多少天
+	</script>
+三.计时器（控制时间）
+	<script>
+	1.添加/设置计时器
+		//间隔时间循环执行函数
+		//无限循环调用
+		setInterval(函数名, 间隔时间(单位毫秒)[,(调用函数的参数)函数的参数1，函数的参数2，函数的参数3.。。。]);
+					//函数名 , 间隔事件
+		//延迟事件执行函数(执行一次结束)
+		//只调用一次
+		setTimeout(函数名, 延迟时间[,(调用函数的参数)函数的参数1，函数的参数2，函数的参数3。。。。]);
+	2.移除计时器
+		//两个移除方法可以交差使用
+		clearInterval(id);
+		clearTimeout(id);
+
+	</script>
+四.BOM应用 
+	1）跳转页面
+	<script>
+	window.location.href = "跳转到页面的地址";
+	</script>
+	2）返回上一页
+	<script>
+	window.history.back();
+	</script>
+	3）前进一页
+	<script>
+	window.history.forward();
+	</script>
+	4）指定跳转几步
+	<script>
+	window.history.go(2/-2(正值向前跳两步，负值向后跳));
+	</script>
+五.三目运算符
+	三目运算符 
+	格式 条件?true的结果:false的结果;
+	<script>
+	//条件?true的结果:false的结果;
+	var num = 6;
+	// if(num<10){num = '0' + num}
+	num < 10 ? num = '0' + num :num ;
+	console.log(num);
+	</script>

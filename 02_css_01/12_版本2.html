@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册页面版本2</title>
+	<style>
+		body{
+			margin:0 auto;
+		}
+		#first{
+			width: 100%;
+			height: 1000px;
+			margin:0 auto;
+			background:url(images/background.jpg) no-repeat;
+			/* background-size:100% 100%; */
+		}
+		.photo{
+			width:120px;
+			height:120px;
+			border-radius: 50%;
+			/* background:red; */
+			opacity: 1;
+		}
+		
+		table{
+			width:500px;
+			padding-left:700px;
+			padding-top: 220px;
+			text-align: center;
+		}
+		tr{
+			margin-bottom:15px;
+			padding:0px;
+			height:40px;
+			display:block;
+		}#tr_1{
+			height:120px;
+			background: none;
+		}
+		#tr_2{
+			height: 60px;
+		}
+		#tr_3{
+			text-align:left;
+			background: #fff;
+			line-height: 40px;
+		}
+		#tr_8{
+			height: 20px;
+			text-align: left;
+			line-height:20px;
+			background: none;
+			color:#fff;
+		}
+		td{	
+			padding:0px;
+			border:none;
+			height:40px;
+			display:inline-block;
+			
+		}
+		#td_1_1{
+			height:120px;
+			border:none;
+			background: none;
+		}
+		.td_2_1{
+			padding:0;
+			width:242px;
+			height:50px;
+			line-height:50px;
+			border-right:1px solid #E0D0D5;	
+			background:#fff;
+		}
+		#td_2_2{
+			background: #E0D0D5;
+			color:#fff;
+			border-right:1px solid #E0D0D5;
+		}
+		#td_4_1{
+			width:492px;
+			text-align: left;
+			line-height: 40px;
+			background: #fff;
+		}
+		input[type=text]{
+			margin:0;
+			padding:0;
+			width: 424px;
+			border:none;
+			height: 30px;
+			border-left:1px solid #E0D0D5;
+
+		}
+		input[type=submit]{
+			width:490px;
+			height:60px;
+			background:green;
+			border:1px solid #fff;
+		}
+		select{
+			width:242px;
+			height: 40px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="first">
+	<table>
+		<tr id="tr_1">
+			<td colspan="2" id="td_1_1"><img class="photo" src="images/touxiang.jpg" height="120" width="120" alt=""></td>
+		</tr>
+		<tr id="tr_2">
+			<td class="td_2_1">普通注册</td
+			><!--结束尖括号换行用于去空inline-block的空格--><td class="td_2_1" id="td_2_2">手机注册</td>
+		</tr>
+		<tr id='tr_3'>
+			<td>(⊙︿⊙)</td><td><input type="text" placeholder="用户名"></td>
+		</tr>
+		<tr id='tr_3'>
+			<td>(⊙︿⊙)</td><td><input type="text" placeholder="Email"></td>
+		</tr>
+		<tr id='tr_3'>
+			<td>(⊙︿⊙)</td><td><input type="text" placeholder="..."></td>
+		</tr>
+		<tr>
+			<td colspan="2" id="td_4_1">
+				<input type="radio" name="sex" value="女"> 女
+				<input type="radio" name="sex" value="男"> 男
+				<input type="radio" name="sex" value="保密"> 保密
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<select name="sheng">
+					<option value="江苏省">江苏省</option>
+					<option value="山东省">山东省</option>
+				</select>
+			</td>
+			<td>
+				<select name="shi">
+					<option value="南京市">南京市</option>
+					<option value="苏州市">苏州市</option>
+				</select>
+			</td>
+		</tr>
+		<tr id="tr_8">
+			<td colspan="2">
+				<input type="checkbox" value="ok">我已阅读并同意《用户协议》
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="注册">
+			</td>
+		</tr>
+	</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css样式操作</title>
+	<style>
+	.list{
+		width:400px;
+		border:1px solid blue;
+		background:#0AB233;
+		margin:20px auto;
+		padding:0;
+		list-style-position: inside;
+		text-align:center;
+	}
+	.orange{
+		background:#F95E05;
+		height:30px;
+		text-indent:10px;
+		border:1px solid orange;
+	}
+	.red{
+		background:pink;
+		line-height:50px;
+		text-indent:14px;
+		border:1px solid red;
+	}
+	</style>
+</head>
+<body>
+	<p class="nav" style="border:1px solid red;">
+		<a href="#">足球</a>
+		<a href="#">篮球</a>
+		<a href="#">体育</a>
+		<a href="#">乒乓球</a>
+		<a href="#">羽毛球</a>
+	</p>
+	<ol class="list" onclick="huanSE()">
+		<li>水果</li>
+		<li>榴莲</li>
+		<li>西瓜</li>
+		<li>菠萝</li>
+		<li>香蕉</li>
+	</ol>
+
+	<script>
+	//1）获取标签元素
+	var p_obj = document.querySelector(".nav");
+	console.log(p_obj);
+
+	var ol_obj = document.querySelector(".list");
+	console.log(ol_obj);
+
+	//2）获取style属性
+	console.log(p_obj.style); 
+	//结果是：类数组(json数组) 下标是字符串
+	console.log(p_obj.style["border"]); //1px solid red
+	console.log(p_obj.style.border); //1px solid red
+
+	//3)修改css样式
+	console.log(p_obj.style);
+	p_obj.style = "margin:50px;padding:30px;line-height:50px;";
+	console.log(p_obj.style);
+	// p_obj.style.background = "pink";
+	// p_obj.style.width="500px";
+	// p_obj.style.height="50px";
+	// p_obj.style.border ="1p solid red";
+
+	// 4)移除样式
+	// p_obj.style = "";
+
+
+
+	//利用class类的操作
+
+	//获取class类(属性名是 className)
+	console.log(ol_obj.className);
+	ol_obj.className += " orange";
+	// function huanSE(){
+	// 	var ol_obj = document.querySelector(".list");
+	// 	ol_obj.className = "red";
+	// }
+	//移除class类
+	// ol_obj.className="";//移除所有的clas
+
+	//4）如何移除某一个class类？利用类操作的方法
+	//获取class类
+	//classList属性
+	console.log(ol_obj.classList); //["list", "orange"]
+	//结果是一个数组
+	//添加class类
+	ol_obj.classList.add("red");
+	//移除class类
+	ol_obj.classList.remove("red");
+
+
+
+	console.log(typeof(null));
+	</script>
+</body>
+</html>

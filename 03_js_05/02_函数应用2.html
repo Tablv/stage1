@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数应用2</title>
+</head>
+<body>
+	<script>
+	// 要去做一件事情  把大象关进冰箱里
+	// 第一步：打开冰箱门
+	// 第二步：把大象塞进去
+	// 第三步：关上冰箱门
+	// 
+	// 定义函数，做这件事情
+	function closeAnimal(animal){  //参数没有获取值是，是undefind
+		//事情的流程
+		document.write("第一步：打开冰箱门<hr>");
+		document.write("第二步：把"+animal+"塞进去<hr>");
+		document.write("第三步：关上冰箱门<hr>");
+	}
+
+	//调用函数
+	closeAnimal("大象");
+	//把泰迪关进冰箱里
+	closeAnimal("泰迪");
+
+
+
+	//打印一个无需列表：
+	//行数 自定义  列表符号类型自定义
+	//背景色自定义
+	function creatUlList(num,listtype,bgcolor){
+		document.write("<ul type="+listtype+" style=\'background:"+bgcolor+";\'>");
+		for(var i=1;i<=num;i++){
+			document.write("<li>",i,"</li>");
+		}		
+		document.write("</ul>");
+	}
+
+
+	creatUlList(3,"circle","red");
+	creatUlList(4,"square");
+	creatUlList(5,"none");
+	</script>
+</body>
+</html>

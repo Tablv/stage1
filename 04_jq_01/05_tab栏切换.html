@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab栏切换</title>
+	<!-- 能看到的初始状态就用css操作 -->
+	<style>
+	*{margin:0;padding:0;}
+	.newsBox{
+		width:360px;
+		border:1px solid blue;
+		margin:30px auto;
+	}
+	.newsBox ul{
+		list-style:inside;
+		text-indent:16px;
+		display:none;
+
+	}
+	.newsBox .nav{
+		line-height:40px;
+		
+	}
+	.newsBox .nav a{
+		width:60px;
+		text-align:center;
+		display:inline-block;
+		text-decoration:none;
+		font-size:18px;
+		font-weight:bold;
+		color:#333;
+	}
+	.newsBox .nav a.current{
+		color:#1673B0;
+		border-bottom:2px solid #1673B0;
+	}
+	/* 显示第一个新闻列表，其余的隐藏掉 */
+	/* .newsBox ul:nth-child(2){
+		display:block;
+	} */
+	.newsBox ul.current{
+		display:block;
+	}
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		//单击导航栏a标签：切换a的状态和新闻内容
+		//点击一下，改变两个块的类选择器
+		$(".newsBox .nav a").click(function(){
+			//干掉所有a的特殊类选择器
+			$(".newsBox .nav a").removeClass('current');
+			//给当前的标签加上类选择器
+			$(this).addClass('current');
+			//隐藏所有的列表,显示当前列表
+			$(".newsBox ul").removeClass('current');
+			//显示当前列表，获取当前列表的下边  即 a的下标
+			$(".newsBox ul").eq($(this).index()).addClass('current');
+			
+
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="newsBox">
+		<p class="nav">
+			<a href="#" class="current">热门</a>
+			<a href="#">新闻</a>
+			<a href="#">公告</a>
+			<a href="#">活动</a>
+			<a href="#">赛事</a>
+		</p>
+		<!-- 列表信息 -->
+		<ul class="current">
+			<li>热门新闻</li>
+			<li>热门新闻</li>
+			<li>热门新闻</li>
+			<li>热门新闻</li>
+			<li>热门新闻</li>
+		</ul>
+		<ul>
+			<li>新闻新闻</li>
+			<li>新闻新闻</li>
+			<li>新闻新闻</li>
+			<li>新闻新闻</li>
+			<li>新闻新闻</li>
+		</ul>
+		<ul>
+			<li>新闻公告</li>
+			<li>新闻公告</li>
+			<li>新闻公告</li>
+			<li>新闻公告</li>
+			<li>新闻公告</li>
+		</ul>
+		<ul>
+			<li>活动赛事</li>
+			<li>活动赛事</li>
+			<li>活动赛事</li>
+			<li>活动赛事</li>
+			<li>活动赛事</li>
+		</ul>
+		<ul>
+			<li>赛事活动</li>
+			<li>赛事活动</li>
+			<li>赛事活动</li>
+			<li>赛事活动</li>
+			<li>赛事活动</li>
+		</ul>
+	</div>
+</body>
+</html>

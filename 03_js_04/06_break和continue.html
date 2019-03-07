@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>循环关键字</title>
+</head>
+<body>
+	<script>
+	//1)循环输出1-10之间的整数
+	//
+	//break:遇到break，跳出整个循环
+	//continue:遇到continue，跳过本次循环，进入下次循环
+	var num=1;
+	do{
+		if(num == 5){
+			break;
+		}
+		document.write(num+"&nbsp;");
+		num++;
+	}while(num<=10)
+
+	document.write("<hr color=red>")
+
+	//这是一个死循环，因为判断条件与步长分开，导致变量一致维持在5的状态，变换步长与循环体在一块，步长不在变化，直接跳过了
+	// var num=1;
+	// do{
+	// 	if(num == 5){
+	// 		continue;
+	// 	}
+	// 	document.write(num+"&nbsp;");
+	// 	num++;
+	// }while(num<=10)
+
+	// document.write("<hr color=red>")
+
+	for(var i = 1 ; i <= 10; i++){
+		if(i == 5){
+			continue;
+		}
+		document.write(i+"&nbsp;")
+	}
+	</script>
+</body>
+</html>

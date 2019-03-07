@@ -1,0 +1,124 @@
+第四章  Jquery
+1.什么是Jquery
+	.就是一个js文件(.js)
+	.里面封装好了一些方法(函数)，供我们使用
+	.DOM操作的内容
+	.轻量级的js框架
+2.可以做什么
+	操作DOM元素
+	操作DOM的属性
+	操作DOM的样式
+	操作DOM的事件
+	...
+3.怎么是什么jquery
+	1)引入jquery文件
+	<script src="jquery.js"></script>
+	2)新建一个script标记，写自己的js语句
+	<script>
+		//在这里可以写自己的js效果
+	</script>
+	3.加载事件
+	onload:HTML  DOM元素 以及 所有资源加载完成（不掉队）
+	onready：HTML DOM元素加载完成
+	先onready  再onload
+	-所以jq主要操作DOM
+	所以提供了一个onready方法
+	<script>
+	//写法1：
+	jQuery(document).ready(function($) {
+		
+	});
+	//写法2:
+	$(document).ready(function(){
+
+	});
+	//写法3：
+	$(function(){//默认就是加载事件的函数})
+	</script>
+4.jq操作DOM
+  1.获取DOM(通过css选择器)
+  <script>
+  $("#idName");
+  $(".className");
+  $("p");
+  $("input[name=uname]");
+  $("*");
+
+
+  $("ul li");
+  $("ul > li");
+  $("ul,ol");
+  $("a.current");
+
+  筛选选择器
+  $("ul li:even") //偶数下标行
+  $("ul li:odd")  //奇数下标行
+  $("ul li:first") //第一个
+  $("ul li:last")	//最后一个
+  $("ul li:first-child") //第一个
+  $("ul li:last-child") //最后一个
+  
+
+  //第n个
+  $("ul li:nth-child(4)") //第四个
+
+  $("ul li:eq(4)") //下标是四
+
+  $("ul li").eq(4);//下标是4
+  //
+  </script>
+   2.操作DOM元素的属性 ： attr()
+   <script>
+   //第一步获取属性
+   $(elem).attr('属性名');
+   // 添加或设置属性
+   $(elem).attr({
+   	property1: 'value1',
+   	property2: 'value2'
+   });
+   // 设置属性
+	//可以是字符串，可以不加，但是格式最好统一
+	$(".tabs").attr({
+		border:'1px',
+		bordercolor:"red",
+		cellspacing:"0",
+		width:"300px"
+		'height':"400px";
+		});
+	//移除属性
+	$(elem).removeAttr('属性名');
+   </script>
+   3.操作DOM元素的css样式：
+   	css()方法---操作行内样式
+   	<script>
+   	//获取样式的值
+   	$("elem").css("样式名");
+   	//添加或者设置样式
+   	$("elem").css('属性名', '属性值');
+    //如果单单写属性名，就是返回该属性的值
+    // class类选择器操作
+    // 添加类选择器
+    $("elem").addClass('class_name1 class_name2 ...');
+    // 删除类选择器
+    $("elem").removeClass('class_name1 class_name2 ...');
+    // 切换类选择器
+     $("elem").toggleClass('class name');
+
+   	</script>
+
+   	4.操作DOM元素的事件
+   	<script>
+   	//1)原生js的dom事件
+	elem.onclick = function(){}
+	//2)jq的dom事件
+	$(elem).click(function(event) {
+		//当前对象 this event.srcElement
+		//this 要使用原生的js操作
+		//$(this)可以使用jq方法
+		//$(this).index() 当前元素的下标
+	});
+
+   	</script>
+
+
+   	练习：轮播图原点切换   左右切换

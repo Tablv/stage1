@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		body{
+			margin:0;
+		}
+		/* 公共样式 */
+		.autoW{
+			width: 970px;
+			margin: 0 auto;
+		}
+
+		/* 头部 */
+		.head_top{
+			border: 1px solid red;
+			background: pink;
+		}
+		.head_top .main{
+			height: 30px;
+			border: 1px solid green;
+		}
+		.head_center{
+			background: skyblue;
+		}
+		.head_center .main{
+			height: 120px;
+			border: 1px solid green;
+		}
+		.head_bottom{
+			height: 30px;
+			background: blue;
+			margin-bottom: 10px;
+		}
+		/* 内容主体 */
+		.content{
+			border: 1px solid orange;
+			height: 600px;
+		}
+		/* 左侧：left_side */
+		.content .left_side{
+			width: 300px;
+			height: 400px;
+			background: pink;
+			float: left;
+		}
+		/* 右侧：right_side */
+		.content .right_side{
+			width: 660px;
+			height: 500px;
+			background:skyblue;
+			float: right;
+		}
+		/* 底部 */
+		.foot{
+			width: 960px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.foot .friendlink{
+			height:100px;
+			background:lightgreen;
+		}
+		.foot .copyright{
+			height: 80px;
+			background: #35B5A2;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<!-- 头部 -->
+		<div class="head_top">
+			<div class="main autoW"></div>
+		</div>
+		<div class="head_center">
+			<div class="main autoW"></div>
+		</div>
+		<div class="head_bottom autoW"></div>
+	<!-- 内容主体 -->
+		<div class="content autoW">
+			<!-- 左侧 -->
+			<div class="left_side"></div>
+			<div class="right_side"></div>
+			<!-- 右侧 -->
+
+		</div>
+	<!-- 底部 -->
+		<div class="foot">
+			<div class="friendlink"></div>
+			<div class="copyright"></div>
+		</div>
+</body>
+</html>

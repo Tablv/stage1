@@ -1,0 +1,76 @@
+第二章 CSS
+一.div布局
+	1）整体布局：从大往小
+	2）写注释分模块
+	3）命名尽量使用英文或者拼音，易识别
+	4）提取公共样式，优化代码
+二.选择器:伪元素选择器
+	1）:first-child{}  第一个孩子
+	2）:last-child{}   最后一个孩子
+	3）:nth-child(n){} 第n个孩子
+
+	4) :first-line{}  首行
+	5) :first-letter{} 首字符
+
+	6) :focus{} 获取焦点，一般应用于输入框
+
+	7) :before{content:"内容";} <!--content必填-->
+		before{content:url（图）;}
+		在头部添加元素（行元素）
+	8) :after{content:"内容";}<!--content必填-->
+		after{content:url（图）;}
+		在尾部添加元素（行元素）
+
+三.实现父盒子高度的几种方式？
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="bottom"></div>
+	1)设置一个高度(不能自适应，不灵活)
+	<style>
+		.father{
+			height:300px;
+		}
+	</style>
+	2）给父元素添加overflow:hidden;溢出处理(可以自适应,单本质上是溢出隐藏，所以当遇到溢出的情况是，会隐藏掉内容)
+	<style>
+		.father{
+			overflow:hidden;
+		}
+	</style>
+	3）给被影响的元素清除浮动（布局正常，父元素高度为0，无法为父元素提供背景等）
+	<style>
+		.bottom{
+			clear:both;
+		}
+	</style>
+	4）在父盒子的末端添加上一个块状子元素
+	<div class="father">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="clearbox"></div><!--添加的子元素-->
+	</div>
+	<div class="bottom"></div>
+
+	<style>
+		.clearbox{
+			clear:both;
+		}
+	</style>
+	5）在父盒子的末端添加一个伪元素
+	<style>
+		.father:after{
+			content:"";
+			display:block;
+			clear:both;
+		}
+	</style>
+四.页面案例
+	北青-头部三行
+五.溢出处理
+overflow 
+overflow:visible;  显示
+overflow:auto;  自动添加滚动条
+overflow:hidden; 隐藏
+			

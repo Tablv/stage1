@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+	$(function(){
+		//找到box1
+		$('.box1').css('border','1px solid red');
+		//找box1的父级
+		$('.box1').parent().css('border','1px solid blue'); //box
+		// $('.box1').parents().css('border','1px solid orange'); //box body
+		$('.box1').parents('div').css('border','1px solid orange'); //box ,因为box是div标签
+		$('.box1').parents('.box').css('border','1px solid orange'); //box ,因为box是div标签
+
+
+		//box2
+		$('.box2').css('border','1px solid green');
+		//找孩子
+		// $('.box2').children().css('border','2px solid pink');
+		$('.box2').find("*").css('border','2px solid purple');   //必须加参数
+
+		//找p
+		$('p').css('background','pink');
+		//找哥哥
+		// $('p').prev().css('background','#25C425'); //上一个哥哥
+		// $('p').prevAll().css('background','#08F525'); //所有的哥哥
+		$('p').prevUntil('h4').css('background','#08F525'); //找到h4就不找了，不包含H4       必须加参数
+
+	});
+	</script>
+</head>
+<body>
+<div class="box">
+	<div class="box1">
+		<h3>标题<span>小标题</span></h3>
+		<div class="box2">
+			<h5>标题5<span>小标题</span></h5>
+			<h4>标题4<span>小标题</span></h4>
+			<h3>标题3<span>小标题</span></h3>
+			<h2>标题2<span>小标题</span></h2>
+			<p>段落<span>2019-1-15</span></p>
+			<h2>标题2<span>小标题</span></h2>
+			<h1>标题1<span>小标题</span></h1>
+		</div>
+	</div>
+</div>
+	
+</body>
+</html>

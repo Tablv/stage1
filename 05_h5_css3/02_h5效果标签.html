@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- meter标签  度量尺 -->
+	<!-- low 最低预警值（变黄）  high最高预警值（变黄） -->
+	<!-- 黄 - 绿 - 黄 ptimum在low-high之间（12）-->
+	<meter value=10 min=0 max=100 low=15 high=90></meter>
+	<!-- 黄色 -->
+	<meter value=50 min=0 max=100 low=15 high=90></meter>
+	<!-- 绿色 -->
+	<meter value=95 min=0 max=100 low=15 high=90></meter>
+	<!-- 黄色 -->
+	<br>
+	<!-- 根据设置最优值得位置，来设置颜色变化 -->
+
+
+	<!-- 绿 - 黄 -红  optimum在min~low之间（12）-->
+	<meter value=10 min=0 max=100 low=15 high=90 optimum=12></meter>
+	<!-- 绿色 -->
+	<meter value=50 min=0 max=100 low=15 high=90 optimum=12></meter>
+	<!-- 黄色 -->
+	<meter value=95 min=0 max=100 low=15 high=90 optimum=12></meter>
+	<!-- 红色 -->
+	<br>
+
+
+	<!-- 红- 黄 -绿   optimum在high-max之间（95）-->
+	<meter value=10 min=0 max=100 low=15 high=90 optimum=95></meter>
+	<!-- 红色 -->
+	<meter value=50 min=0 max=100 low=15 high=90 optimum=95></meter>
+	<!-- 黄色 -->
+	<meter value=95 min=0 max=100 low=15 high=90 optimum=95></meter>
+	<!-- 绿色 -->
+
+	<!-- 总结
+		optimum所在区间，颜色为绿色，离得最远的区间为红色，中间的为黄色
+	 -->
+
+
+	 <!-- progress标签 进度条 -->
+
+	 <progress max=100 value=0 id="pro"></progress>
+	 <script>
+	 //让进度从0 加载到100，加载完成，跳转到其他页面
+	 function loading(){
+	 	var pro = document.getElementById("pro");
+	 	if(pro.value == 100){
+	 		clearInterval(count)
+	 		window.location.href="file:///D:/web1811/%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5/05_h5_css3/01_h5%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE.html";
+	 	}else{
+	 		pro.value++;
+	 	}
+	 	
+	 }
+	 var count =setInterval(loading,100);
+	 </script>
+</body>
+</html>

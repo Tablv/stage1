@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>for in 循环</title>
+</head>
+<body>
+	<script>
+	//定义一个数组
+	var student= ['apple',18,'女','跳舞'];
+	console.log(student);
+	//普通for循环遍历数组元素
+	for(var key = 0;key<student.length;key++){
+		console.log(key,student[key]);
+	}
+
+	//for in 循环遍历数组元素
+	
+	for(key in student){
+		document.write(key,typeof(key),student[key]+"<br>");
+	}
+	//二维数组
+	var arr = [
+		[1,2,3,4],
+		['apple','banana','pear']
+	];
+
+	// console.log(arr['1']['1']);
+	//用 for in 循环遍历二维数组
+	for(key1 in arr){
+		//key:下标  arr[key]:值  （一维数组）
+		//变量arr[key]一维数组
+		for(key2 in arr[key1]){
+			document.write(arr[key1][key2]);
+		}
+		document.write("<hr>");
+	}
+
+	//声明数组 指定下标
+	var student = [];
+		student[0] = 'apple';
+		student[2] = 18;
+		student[5] = '男';
+		student[8] = '唱歌';
+
+		console.log(student);
+	for(var i=0; i<student.length;i++){
+		console.log(i,student[i]);
+	}
+	for(i in student){
+		console.log(i,student[i]);
+	}
+
+
+	//声明一个数组：下标定义为字符串形式
+	//关联数组
+	var student=[];
+		student["学号"] = '001';
+		student["姓名"] = '王祖蓝';
+		student["性别"] = '男';
+		student["年龄"] = 30;
+		student[8] = 20;
+
+		console.log(student);
+
+	//for in 循环遍历数组 
+	for(key in student){
+		console.log(key+":"+student[key])
+	}
+
+	
+	</script>
+</body>
+</html>

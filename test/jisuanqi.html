@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计算器</title>
+	<style>
+	*{
+		margin:0 auto;
+		color:#fff;
+	}
+	body{
+		background:#000;
+		margin:0 auto;
+	}
+	.input{
+		border:1px solid #fff;
+		border-bottom:0;
+		width:250px;
+		height:30px;
+		color:green;
+		background:#C7C6BA;
+	}
+	.output{
+		border:1px solid #fff;
+		border-top:0;
+		width:250px;
+		height:30px;
+		color:yellow;
+		text-align:right;
+		background:#C7C6BA;
+	}
+	table{
+		width:250px;
+		text-align:center;
+		line-height:50px;
+		border:#D09696 1px solid;
+	}
+	td{
+		background:#D09696;
+		padding:5px 15px;
+		cursor:pointer;
+	}
+	td:hover{
+		background:#49925C;
+	}
+
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script src='jq/jisuanqi.js'></script>
+</head>
+<body>
+	<div class="input">
+		
+	</div>
+	<div class="output">
+		
+	</div>
+	<div>
+		<table>
+			<tr>
+				<td>AC</td>
+				<td>/</td>
+				<td>*</td>
+				<td>DEL</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>+</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td rowspan="2">=</td>
+			</tr>
+			<tr>
+				<td colspan="2">0</td>
+				<td> . </td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+/*
+* @Author: Administrator
+* @Date:   2019-01-10 19:02:08
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-01-11 09:49:47
+*/
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font-family:'微软雅黑';
+	font-size:16px;
+}
+.autoW{width:1000px;margin:0 auto;}
+.left{float:left;}
+.right{float:right;}
+
+.head{
+	width:100%;
+	background:#606060;
+}
+.head .nav{
+	background:#322727;
+	line-height:40px;
+}
+.head .nav:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.head .nav img{
+	margin-top:8px;
+}
+
+/* 一级菜单 */
+.nav .group{
+	text-align:center;
+	position:relative;
+}
+.nav .group>a{
+	color:#fff;
+	display:block;
+	padding:0 20px;
+}
+/* 二级菜单 */
+.nav .group ul{
+	display:none;
+	list-style:none;
+	color:#fff;
+	line-height:40px;
+	width:100%;
+	
+}
+.nav .group ul li{
+	
+}
+/* 鼠标滑过后，二级菜单出现 */
+.nav .group:hover ul{
+	border:1px solid red;
+	display:block;
+	position:absolute;
+}
+.nav .group ul a{color:#000;}
+.nav .group>a{
+	color:#fff;
+	text-decoration:none;
+	display:inline-block;
+
+}

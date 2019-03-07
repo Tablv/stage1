@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1)获取字符串的长度
+		var str1 = "Hello World!同一个世界";
+		document.write(str1.length);//17
+		document.write('<br>')
+		//2)查找字符
+		//结果：如果找到了输出该字符对应的数字序号--从0开始排序
+		//如果没找到结果是-1
+		document.write(str1.indexOf('l'));//2
+		document.write('<br>')
+		document.write(str1.indexOf('e'));//1
+
+		document.write('<br>')
+		document.write(str1.indexOf('a'));//-1
+		document.write('<br>')
+		document.write(str1.indexOf('v'));//-1
+	</script>
+</body>
+</html>

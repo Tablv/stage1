@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单对象</title>
+</head>
+<body>
+	<!-- 登录 -->
+	<h3>登录</h3>
+	<form action="index.php" name="login" onsubmit="return checkForm()"> 
+		用户名：<input type="text" name="uname"><br>
+		密码：<input type="password" name="upass"><br>
+		<input type="submit" value="登录">
+	</form>
+
+	<!-- 注册 -->
+	<h3>注册</h3>
+	<form action="" name="register" onsubmit="return checkForm2()">
+		
+		用户名：<input type="text" name="uname"><br>
+		密码：<input type="password" name="upass"><br>
+		确认密码：<input type="password" name="repass"><br>
+		<input type="submit" value="注册">
+	</form>
+
+
+	<script>
+	console.log(document.forms);
+	console.log(document.forms['login']);
+	console.log(document.forms['login'][0]); 
+	console.log(document.forms['login'].children)
+	//找登录表单的用户名
+	console.log(document.forms['login']['uname']);
+	//<input type="text" name="uname">
+	</script>
+	<script>
+	//表单功能
+	//登录表单
+	//用户名和密码符合要求才能提交表单，否则不能
+	//1.怎么才能阻止表单提交
+	//表单有个事件，叫做提交事件 onsubmit
+	//onsubmit="return true/false"(可以提交/阻止提交)
+	//一般不直接写 return true/false 而是返回一个验证函数，返回true/false
+
+
+	//封装一个函数  表单验证
+	//结果  return true  允许提交
+	//		return false 阻止提交
+	function checkForm(){
+		var result = checkUname();
+		if(result[0]){//验证成功
+			console.log(result[1]);
+			return true;
+		}else{//验证失败
+			console.log(result[1]);
+			return false;
+		}
+
+	}
+	function checkForm2(){
+		var result1 = checkUname1();
+		var result2 = checkPass();
+		if(result1[0]){//验证成功
+			console.log(result1[1]);
+			if(result2[0]){
+				console.log(result2[1]);
+				return true;
+			}else{
+				console.log(result2[1]);
+				return false
+			}	
+		}else{//验证失败
+			console.log(result1[1]);
+			return false;
+		}
+
+	}
+	//验证用户名函数:
+	function checkUname(){
+		var uname = document.forms['login']['uname'].value;
+		if(uname ==""){
+			return [false,"用户名不能为空"];
+		}else if(uname.length>11){
+			return [false,"用户名不能超过11个字符"];
+		}else{
+			return [true,"用户名通过！"];
+		}
+	}
+	//验证密码函数：
+	function checkPass(){
+		var upass = document.forms['register']['upass'].value;
+		var repass = document.forms['register']['repass'].value;
+		if(upass == repass){
+			console.log("test");
+			return [true,"密码一致"];
+		}else{
+			return [false,"密码不一致"];
+		}
+	}
+	function checkUname1(){
+		var uname = document.forms['register']['uname'].value;
+		if(uname ==""){
+			return [false,"用户名不能为空"];
+		}else if(uname.length>11){
+			return [false,"用户名不能超过11个字符"];
+		}else{
+			return [true,"用户名通过！"];
+		}
+	}
+	</script>
+</body>
+</html>

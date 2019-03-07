@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box1{
+		width:100px;
+		height:80px;
+		border:5px solid #ccc;
+		border-radius:20px 30px 40px 50px;
+	}
+	.box2{
+		width:100px;
+		height:100px;
+		border:3px solid #72FF0A;
+		margin-top:30px;
+		border-radius:53px;
+	}
+	.box3{
+		margin:30px 0;
+		width:160px;
+		height:80px;
+		border:2px solid blue;
+		color:pink;
+		/* box-shadow: 10px 15px 3px 0 #4A0505; */
+		box-shadow: 0px 1px 1px 0 #4A0505;
+		text-shadow:6px 6px 1px black;
+	}
+	.box4,.box5,.box6{
+		width:100px;
+		height:100px;
+		margin:40px;
+		border:1px solid purple;
+		float:left;
+	}
+	.box4{
+		/* 变换  translate */
+		transform:translate(20px,20px);
+	}
+	.box5{
+		/* 变换  rotate */
+		/* 单位 deg */
+		/* transform:rotate(360deg); */
+		/* 添加过渡效果  看到变换过程 */
+		/* 单位秒 */
+		transition:1s;
+	}
+	.box5:hover{
+		/* 变换  rotate */
+		/* 单位 deg */
+		transform:rotate(360deg);
+		/* 添加过渡效果  看到变换过程 */
+		/* 单位秒 */
+		transition:1s;
+	}
+	.box6{
+		/* 变换  scale */
+		/* 宽度的缩放  高度的缩放 */
+		transform:scale(0.5);
+	}
+
+	</style>
+</head>
+<body>
+	<div class='box1'>圆角</div>
+	<div class='box2'>正圆形</div>
+
+	<div class="box3">投影</div>
+	<div class="box4">
+		translate
+	</div>
+	<div class="box5">
+		rotate
+	</div>
+	<div class="box6">
+		scale
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+	h3{
+		width:160px;
+		line-height:40px;
+		background:#297834;
+		border:1px solid #297834;
+		margin-left:30px;
+		text-indent:12px;
+		/* 缩进 */
+		color:#fff;
+
+	}
+	.list{
+		width:160px;
+		line-height:34px;
+		border:1px solid #297834 ;
+		margin-left:30px;
+		list-style:none;
+		background:#88E17C;
+		text-indent:12px;
+	}
+	.list li{
+		border-bottom:1px dashed #297834;
+	}
+	.list li:last-child{
+		border:none;
+	}
+	.list .current{
+		text-align:center;
+		text-indent:0;
+		background:#57D14C;
+		color:#fff;
+	}
+	</style>
+</head>
+<body>
+	<h3>菜单</h3>
+	<ul class="list">
+		<li class="current">电视剧</li>
+		<li>电影</li>
+		<li>新闻娱乐</li>
+		<li>彩票星座</li>
+		<li>教育考试</li>
+	</ul>
+
+
+
+	<script>
+	//单击每一行（li），添加current类选择器属性
+	var li_obj = document.querySelectorAll(".list li");
+	// console.log(li_obj);
+	// 给li添加onclick属性
+	for(var i = 0;i < li_obj.length;i++){
+		// console.log(i);
+		li_obj[i].onclick = function(e){
+			// console.log("this is onclick");
+			// console.log(e);
+			// console.log(e.srcElement);
+			// console.log(e.target);
+			// console.log(i);  //5
+			// console.log(li_obj[i]);
+			// li_obj[i].classList.add("current");
+			// 
+			
+			// 1.给所有的li去除current类选择器
+			for(var j = 0;j<li_obj.length;j++){
+				li_obj[j].classList.remove("current");
+			}
+			//给当前的li添加current classList.add();
+			e.target.classList.add("current");
+		}
+	}
+
+
+
+	</script>
+</body>
+</html>

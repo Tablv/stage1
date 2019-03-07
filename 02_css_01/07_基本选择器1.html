@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* 标签选择器 */
+		body{
+			background:#94e290;
+		}
+		html{
+			border:3px dotted #0211FC;
+		}
+		/* id选择器 */
+		#list_1{
+			width:110px;
+			border:1px dashed red;
+			line-height:40px;
+			/* background: #d9e290; */
+		}
+		/* class类选择器 */
+		.list_2{
+			width:200px;
+			border:2px dashed red;
+			line-height:40px;
+			/* background: #d9e290; */
+		}
+		/* 定义一个公共样式:class类选择器 */
+		.list_0{
+			background:#FFFFFF;
+			text-decoration: underline;
+			list-style-position: inside;
+			border:4px ridge #C8C8C8;
+		}
+		/* body *{
+			background:#A13333;
+			text-decoration: underline;
+			list-style-position: inside;
+		} */
+		/* 属性选择器 */
+		input[name=uname]{
+			border:none;
+		}
+		input[name=mobile]{
+			border:2px solid orange;
+		}
+		input[name=upass]{
+			border:2px green solid;
+		}
+		input[type=text]{
+			background:#F69191;
+		}
+		*{
+			border:2px double #0EF2DD;
+		}
+	</style>
+</head>
+<body>
+	<ul id="list_1" class="list_0">
+		<li>国破山河在</li>
+		<li>城春草木深</li>
+		<li>感时花溅泪</li>
+		<li>恨别鸟惊心</li>
+	</ul>
+	<ul class="list_2 list_0">
+		<li>国破山河在</li>
+		<li>城春草木深</li>
+		<li>感时花溅泪</li>
+		<li>恨别鸟惊心</li>
+	</ul>
+	<ol id="list_1">
+		<li>国破山河在</li>
+		<li>城春草木深</li>
+		<li>感时花溅泪</li>
+		<li>恨别鸟惊心</li>
+	</ol>
+	<form action="">
+		<p>
+			用户名:	<input type="text" name="uname">
+		</p>
+		<p>
+			手机号：<input type="text" name="mobile">
+		</p>
+		<p>
+			密码: <input type="password" name="upass">
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
+</body>
+</html>

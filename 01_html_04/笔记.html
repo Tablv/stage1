@@ -1,0 +1,163 @@
+第一章 HTML
+一、表单的属性
+	1.form标签
+	<form action="biji"> </form>
+	*属性：
+	1)action="提交的后台地址"
+		action为空时，默认提交地址为self当前页
+	2)method="表单提交数据的方式（get/post）"
+		get方式:  表单默认提交方式,有两个位置接收（地址栏能看到提交信息）
+			1）地址栏（？传参）问号传参
+			2）后台页面接收
+		post方式: 只有一个位置接收，地址栏看不到提交信息
+			1）后台页面接收
+		区别：
+		post比get安全；
+		get比post效率高；为什么呢？
+	3)enctype="multipart/form-data"
+	（如果有文件上传，必须要添加这个属性）
+	 可以使后端页面接收到文件的相关信息：
+	 	1）文件的大小
+	 	2）文件的后缀名（类型）
+	 	3）文件的临时存储位置
+
+	 如果没有该属性，后端页面只能接收到文件的名字
+
+	2.表单控件属性：
+	 1）name="自定义名字（尽量使用英文）"可以使用英文字母和数字和_组合
+	 2）value="默认值"
+	 	
+		传递数据：控件name名=控件value值
+		<!-- 注意 -->
+		<input type="radio">
+		<input type="checkbox">
+		<select name="" id="">
+			<option value=""></option>
+		</select>
+		这三种控件必须要提前设定好value默认值，控件属性只能设置默认项，并不能给定默认值
+
+	 3）maxlength="数字" 限制输入的最大长度
+	 4）readonly="readonly"属性与值是一样的，只读（onlyread）
+	 5）disabled="disabled"属性与值是一样的，禁用
+
+	3.单独属性：
+	 1）checked="checked"  单选框与复选框设置默认项
+	 	<input type="radio" checked="checked">
+	 	<input type="checkbox" checked="checked">
+	 2）selected="selected" 下拉列表设置默认项
+	 	<select name="" id="">
+	 		<option value=""></option>
+	 		<option value="" selected="selected"></option>
+	 	</select>
+	 3）multiple="multiple" 上传文件开启允许多选的属性设置 
+	 	<input type="file" multiple="multiple">
+
+	 注：属性名与属性值相同的同名同值属性，可以省略写法，只写属性名
+	     例如checked="checked" 可以简写成checked
+
+	 4) style="resize:none" 不允许重置多行文本域的大小(resize重置) 
+		<textarea name="" id="" cols="30" rows="10" style="resize:none"></textarea>
+
+	4.按钮类型
+		<!-- 提交按钮 -->
+		<input type="submit" value="注册">
+		<!-- 重置按钮 -->
+		<input type="reset" value="重置">
+		<!-- 普通按钮 ：自定义功能，用js实现功能-->
+		<input type="button" value="按按">
+		<!-- 图片按钮 :提交表单-->
+		<input type="image" src="../01_html_02/img/11.ico">
+		<!-- button按钮:提交表单 -->
+		<button>按钮</button>
+
+二、页面内框架
+	功能：在当前页面插入一个子页面
+	<iframe src="地址" frameborder="0"></iframe>  
+	*属性：
+	1）frameborder="0/>0" 0:无边框  >0:有边框
+
+三、css
+	html：提供标签元素，素颜
+	css：美化，修饰标签元素，美图秀秀
+	1.什么是css？
+		英文全称Cascading Style Sheets
+		中	文：层叠样式表
+	2.css的语法格式
+		样式名:值;样式名:值;样式名:值;...
+		width:200px;height:300px;
+	3.书写的位置？
+		1）行内样式：写在标签style属性里
+		<p style="width:200px;height:300px;">
+			段落标签，没有宽高
+		</p> 
+		每一个标签都有style属性
+
+
+		2）内联样式（内部联接）：写在<style></style>标签里
+		<style>
+			选择器（样式与标签之间进行联系）
+			选择器{
+				width:200px;height:300px;
+			}
+		</style>
+		选择器类别：
+		标签选择器：
+
+
+		3）外联样式：写在外部css文件里
+		index.css 样式文件
+		选择器{
+				width:200px;height:300px;
+			}
+		index.html
+		如果要用样式文件的样式,要链接过来
+		<link rel="stylesheet" href="index.css">
+		
+
+		使用范围：
+		1）行内样式：只作用于当前标签
+		2）内联样式：作用于当前页面
+		3）外联样式：作用于整个项目所有页面
+四、css样式：边框(占位置)
+	1）border-width:2px; 边框大小,单位必须加
+	2）border-color:red; 边框颜色
+	3）border-style:solid; 边框类型（实线）
+					dashed;虚线边框
+					dotted;点状边框
+					double;双边框
+					ridge;凸槽边框
+					groove;凹槽边框
+					none; 无
+	简化：
+	4）border: 2px solid red; (值没有顺序,并非要三个值都要写)
+	5）border-left、border-right、border-top、border-bottom
+	   左边框、右边框、上边框、下边框
+
+五、css样式：背景
+	1）background-color:red;背景色
+	2）background-image:url(图片地址); 背景图
+	3）background-repeat:repeat（/repeat-x/repeat-y/no-repeat）;背景图平铺方式，默认repeat
+	4）background-position:水平位置 垂直位置;背景的位置(x y)
+	   水平位置；left right center 或者具体值  20px/-20px
+	   垂直位置：top bottom center 或者具体值  20px/-20px
+
+	   注释：如果是具体值
+	   正值：向右向下移动
+	   负值：向左向上移动
+
+	5）background-size:宽 高;背景图的大小
+	   宽/高：300px/50%（可以为具体值，也可以为百分比）
+
+	简化：
+	1）background:单个颜色属性
+	2）background:背景图属性+背景图特有属性
+	3）background:所有属性都有
+	注意：大小不能简化，只能写background-size
+	例如：
+	1）background: #D18383;
+	2）background: url(../01_html_02/img/10.ico) no-repeat center; 
+	3）background: #2B1EF3 url(../01_html_02/img/10.ico) no-repeat right bottom;
+
+六：
+	1）歌曲页面（提示：css字体与css文本）
+	2）css样式word

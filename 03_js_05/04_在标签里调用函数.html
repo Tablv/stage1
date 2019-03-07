@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>在标签里调用函数</title>
+</head>
+<body>
+	<!-- 单击事件 onclick -->
+	<input type="button" value="delete" onclick="del()">
+	<input type="button" value="创建一个三行的无序列表" id="btn2">
+	<script>
+	//点击删除按钮：去做一件事请
+	function del(){
+		console.log("删除完成!");
+	}
+	//点击第二个按钮：去做一件事件
+	btn2.onclick = function(){
+		//事情的过程...
+		document.write("<ul>");
+		for(var i = 1;i<=3;i++){
+			document.write("<li>第"+i+"行</li>")
+		}
+		document.write("</ul>");
+	}
+	function createUlList(){
+
+	}
+	</script>
+</body>
+</html>

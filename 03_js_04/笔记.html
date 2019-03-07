@@ -1,0 +1,112 @@
+第三章  JS
+一：数组
+	1.声明数组
+	元素：不同数据类型
+	<script>
+	//一维数组
+	var arr = [1,"a",true,false] ;
+	//多维数组
+	var arr = [1,"a",true,false,[123,'abc',true,false]] ;
+	</script>
+	2.数组的属性：长度
+	<script>
+	arr.length;
+	*1)数组元素的最大下标  = arr.length-1
+	 2)仅识别数组下标
+	</script>
+	3.数组定义分类
+	<script>
+	1)数字下标：索引数组
+	var student=['apple',18,'男','唱歌'];
+	2)字符串下标：关联数组
+	var student=[];
+		student["学号"] = '001';
+		student["姓名"] = '王祖蓝';
+		student["性别"] = '男';
+		student["年龄"] = 30;
+		student[8] = 20;
+
+		console.log(student);
+	---------------------------------------------
+	注释:
+		索引数组：可以用for与 for...in 循环遍历
+		关联数组：只能用 for...in 循环遍历
+
+	//for in 循环遍历数组 
+	for(key in student){
+		console.log(key+":"+student[key])
+	}
+	</script>
+
+
+	4.数组的方法应用
+	<script>
+	查找数组的元素
+	arr.indexOf(查找的目标元素[, 开始索引（从哪个位置开始找）])
+	arr.lastIndexOf(查找的目标元素[, 开始索引（从哪个位置开始找）])(倒叙)
+	//结果
+	//如果找到了，返回元素的下标
+	//否则，没找到，返回-1
+	//
+	//定义一个数组
+	var student = ['李白','吕布','貂蝉','张飞','大乔'];
+	//查找元素（找人） arr.indexOf('谁');
+	console.log(student.indexOf('吕布'));//1
+	console.log(student.indexOf('大乔'));//4
+	console.log(student.indexOf('项羽'));//-1
+	console.log(student.indexOf('小乔'));//-1
+	console.log(student.lastIndexOf('项羽'));//-1
+	console.log(student.lastIndexOf('小乔'));//-1
+	</script>
+	<!-- 案例：提供一个输入框，输入你的注册用户名
+	要求：不能使用已经注册过的用户名 -->
+二：循环
+	1.for循环
+	<script>
+	//for循环
+	for(var i=1;i<=10;i++){
+		//循环过程中做什么
+	}
+	//循环遍历数组
+	for(var i=0;i<=arr.length-1;i++){
+		//i:下标
+		//arr[i]:值
+	}
+	</script>
+	2.for...in循环（主要应用于数组遍历）
+	key:隐藏的指针，指向下标
+	<script>
+	for(key in arr){
+		//key:变量名,记录元素下边
+		//arr:变量名,遍历的数组名
+		document.write(arr[i]);
+	}
+	</script>
+	3.while循环
+	<script>
+	初始值;
+	while(条件判断){
+		循环体
+		变换步长
+	}
+	</script>
+	4.do...while循环（先执行，后判断）
+	<!-- 会无条件执行至少一次 -->
+	<script>
+	初始值;
+	do{
+		循环体;
+		变换步长;
+	}while(条件)
+	</script>
+
+	5.break 和 continue 关键字
+	<script>
+		1)break: 终端，截断
+		   遇到break，跳出整个流程语句，
+		   switch里必须要用到break
+		2)continue: 中断 ，继续
+		   遇到continue，跳出本次循环，进入下次循环
+	</script>
+	
+三：函数

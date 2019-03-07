@@ -1,0 +1,142 @@
+一：列表
+  1.无序列表
+  标签名
+    <ul>
+      <li>第一行</li>
+      <li>第一行</li>
+      <li>第一行</li>
+    </ul>
+    <ul type=""> </ul>
+    type 类型
+    disc   实心点 默认 
+    circle 空心圆
+    square 矩形
+    none   无
+
+
+  2.有序列表
+
+  标签名：
+  <ol>
+  <li></li>
+  <li></li>
+  <li></li>
+  </ol>
+  <ol type> </ol>
+  type 类型
+     1   数字排序   默认格式
+     a   小写英文排序
+     A   大写字母排序
+     i   小写的罗马排序
+     I   大写的罗马排序
+     <ol type='1' start='5'> </ol>
+  start 开始位置(可以用来实现分页)
+
+  3.自定义列表
+    标签名：
+    <dl>
+    	<dt>一级标题</dt>
+    	<dd>二级标题</dd>
+    	<dd>二级标题</dd>
+    	<dd>二级标题</dd>
+    </dl>
+    实现分级列表
+
+
+    一般不允许 在ul 与li  之间插入别的标签
+    各种列表之间是可以嵌套的
+
+二：表格
+
+    <table>
+       <tr>行
+        <th>列 加黑</th>
+        <td>列</td>
+       </tr>
+       <tr>行
+        <th>列 加黑</th>
+        <td>列</td>
+       </tr>
+
+
+    </table>
+    1)table标签属性
+    border   边框
+    bordercolor   边框颜色
+    width   宽度
+    height  高度
+    cellspacing  单元格的外间距
+    cellpadding  单元格的内间距
+    align     水平对其方式
+    bgcolor 背景色
+    2）tr标签的属性：
+    bgcolor   背景色
+    height    行高
+    align=“left/center/right”     水平对齐方式
+    valign="top/middle/bottom"    垂直对其方式
+    3）td/th标签的属性
+    bgcolor 背景色
+    height  行高
+    width   列宽
+    align   水平对齐方式
+    valign  垂直对齐方式
+    th与td的区别，th标签表头标志，样式：居中，加黑
+
+    4）单元格合并
+    行合并 rowspan="合并个数" （上下）
+    列合并 colspan="合并个数" （左右）
+    步骤：
+    从起始位置开始合并；
+    被合并掉的单元格要从源代码中删掉
+    5)其他标签（了解）
+    <caption>表格标题</caption>
+    分组标签：（行）
+    <thead></thead>
+    <tbody></tbody>
+    <tfoot></tfoot>
+    将整个设置成了三部分
+    
+
+    特征：
+    1）独占一行，会自动换行
+    2）宽、高默认是由内容决定的
+    3）一般要设置cellspacing="0"
+
+三、表单
+    作用：收集用户信息，提交到后台页面处理
+    1）表单标签
+    <form action="">
+      <!-- 提供用户操作的表单控件 -->
+    </form>
+    2）表单控件
+      1.单行文本输入框
+      <input type="text">
+      2.密码框
+      <input type="password">
+      3.复选款
+      <input type="checkbox">
+      注意，多个同组的复选按钮出现时，要保证名字一致
+      4.单选框(单选按钮)
+      <input type="radio">
+      注意，多个同组单选按钮出现时，要保证一致的名字
+      5.文件域（上传文件）
+      <input type="file">
+      6.下拉列表（下拉选择框）
+      <select name="" id="">
+        <option value="">选项一</option>
+        <option value="">选项二</option>
+      </select>
+      7.多行文本框（域）
+      <textarea name="" id="" cols="" rows=""></textarea>
+      8.提交按钮
+      <input type="submit">
+四、课下作业
+    1）海贼王
+    2）用户调查表
+    3）会员注册
+    4）联通后台管理（额外）
+五、预习
+  w3school-html/css-css
+  1)css样式-文字
+  1)css样式-背景
+  

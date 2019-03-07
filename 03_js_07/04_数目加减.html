@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+		商品库存(10件)：
+		<input type="button" value="-">
+		<input type="text" value="1">
+		<input type="button" value="+">
+
+	</p>
+
+
+	<script>
+	//商品数目：1-10
+	//获取标签
+	var bnt_list_obj = document.querySelectorAll("input[type=button]");
+	var count_obj = document.querySelector("input[type=text]");
+	//减法按钮的单击事件
+	bnt_list_obj[0].onclick = function(){
+		if(count_obj.value>1){
+			count_obj.value--;
+		}else{
+			alert("库存数量不能少于1");
+		}
+	}
+	//加法按钮的单击事件
+	bnt_list_obj[1].onclick = function(){
+		if(count_obj.value<10){
+			count_obj.value++;
+		}else{
+			alert("库存数量最多只有10");
+		}
+	}
+
+	</script>
+</body>
+</html>

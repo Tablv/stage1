@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	// 1)查找字符 indexOf(substr[,start])  (正序查找)
+	var str = "同一个世界，同一个梦想";
+	console.log(str);
+	console.log(str.indexOf('一',3));
+	// 2)查找字符 lastIndexOf(substr[,start])		（倒序查找）
+	console.log(str.lastIndexOf("个"));
+
+	// 3)替换
+	//   结果：如果成功返回新字符串
+	//   	   如果失败返回旧字符串
+	var str = "我们的国家主席：习近平";
+	// 要求把习近平替换为习大大
+	// str.replace("找到谁","替换谁");
+	// 
+	console.log(str);
+	str = str.replace("国家主席","小弟");
+	console.log(str);
+	console.log(str.replace("习近平","习老弟"));
+
+
+
+	// 4)转换大写字母
+	var str = "LCJ nb ！";
+	console.log(str); //LCJ nb ！
+	console.log(str.toUpperCase());//LCJ NB ！
+	// 5)转换小写字母
+	console.log(str.toLowerCase());
+
+	document.write("this is test! holle world!");
+
+
+
+
+	</script>
+</body>
+</html>

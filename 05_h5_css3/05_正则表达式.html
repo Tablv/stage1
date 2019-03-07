@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>正则表达式</title>
+</head>
+<body>
+	<script>
+
+	//1)定义正则表达式（定义规范）
+	var patt1 = /[A-z]/;
+	//2）把正则表达式转为RegExp对象（正则对象）
+	var reg1 = new RegExp(patt1);
+	//3）调用test（）方法验证
+	console.log(reg1.test('ahdjfhd')); //true
+	console.log(reg1.test('123456')); //false
+
+	console.log("---------------------")
+
+	var parrt1 = /^[abc123456]/;  //以[]内的字符作为开头
+	var reg1 =  new RegExp(parrt1);
+	console.log(reg1.test('123'));  //true
+	console.log(reg1.test('a123'));  //true
+
+	var parrt1 = /^[abc123456]+$/;  //以[]内的字符作为开头,并且作为结尾
+	var reg1 =  new RegExp(parrt1);
+	console.log(reg1.test('123'));  //true
+	console.log(reg1.test('a123A'));  //false
+
+	//需求一  要求验证一下用户名
+	//要求   只能有字母  数字 下划线 组合的
+	//长度要求6到12位
+	
+	var parrt2 = /^[A-z0-9_]{6,12}$/;
+	var reg2 = new RegExp(parrt2);
+	console.log(reg2.test("12345ds_A"));
+
+
+	//需求2 验证手机号
+	//11位，第一位必须是1，二位3456789，三位往后任意组合
+	var parrt = /^1[3456789][0-9]{9}$/;
+	var reg = new RegExp(parrt);
+	console.log(reg.test("45421231"));
+
+	// 需求三 验证邮箱
+	// 可以用 @qq.com / @163.com /@126.com
+	// 用户名  可以有字母 数字 下划线 长度4-8位
+	var email = /^[0-9A-z_]{4,8}@(qq|163|126).com$/;
+	var reg_email = new RegExp(email);
+	console.log(reg_email.test("12345@qq.com"));
+
+
+	</script>
+</body>
+</html>

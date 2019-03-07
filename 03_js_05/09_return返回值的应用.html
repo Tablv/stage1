@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返回值应用</title>
+</head>
+<body>
+	<script>
+	//需求 定义一个函数，求任意两个数的和\差
+	//结果显示：自定义
+	function jiSuan(num1,num2){
+		//求和
+		var sum = num1+num2;
+		//求差
+		if(num1>num2){
+			var cha = num1 - num2;
+		}else{
+			var cha = num2 - num1;
+		}
+		//把结果返回出来
+		return [sum,cha];
+	}
+
+	//自定义结果显示
+	//1 打印到界面  2 打印到控制台  3 不显示
+	function show(i,num1,num2){
+		switch(i){
+		case 1:
+			document.write(jiSuan(num1,num2));
+			break;
+		case 2:
+			console.log(jiSuan(num1,num2));
+			break;
+		default:
+			return jiSuan(num1,num2);
+			break;
+		}
+	}
+
+	//调用函数
+	show(1,2,3);//5,1
+	show(2,3,4);//Array[2]
+	show(3,4,5); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+第三章  JS
+一：流程语句：条件判断
+	1）单条件语句
+	<script>
+	if(条件){
+		true：结果1
+	}else{
+		false：结果2
+	}
+
+	</script>
+	2）多条件语句
+	<script>
+	if（条件1）{
+		true：结果1
+	}else if(条件2){
+		true：结果2
+	}
+	}else if(条件3){
+		true：结果3
+	}
+	。。。
+	else{
+		false：错误结果
+	}
+	</script>
+二：流程语句：switch分支
+	强调:case后的break关键字必须要加
+	<script>
+	switch(条件表达式/变量){
+		case 值1:结果1;break;
+		case 值2:结果2;break;
+		case 值3:结果4;break;
+		....
+		default:其他结果;
+	}
+	</script>
+三：流程语句：循环语句
+	1）循环语句1：for循环
+	<script>
+	for(初始化变量; 满足的条件; 变换的步长){
+		循环体：循环执行的过程
+	}
+	</script>
+浏览器 F12打开控制台
+	Sources菜单-左侧打开网页（代码）
+	----只定行号上单击（加断点）
+	----F5刷新（开启断点测试）
+	----F11执行下一步
+四：数据类型：array数组
+	数组里面的  下标:值  称之为"键值对";
+	语法格式：
+	//1)声明方式1：
+	var arr = []; //数组
+	var arr = [值1,值2,值3,值4,...]; //数组
+	2）声明方式2：
+	var arr = new Array(); //数组
+	var arr = new Array(值1,值2,值3,值4,...); //数组
+	属性：
+	<script>
+	//数组arr.length
+	//最大下标 = arr.length-1
+	</script>
+	应用：
+	<script>
+	// 根据元素下标找元素
+	arr[0]
+	// 指定下标重新赋值
+	arr[0] = '新值';
+	// 循环遍历数组
+	for(ker=0;ker<arr.length;ker++){
+		// ker:下标
+		// arr[ker]:值
+	}
+	</script>
+	为什么用到数组？
+	存储web班级学生的姓名
+	如果有20名学生，在没有数组的情况下，则就要声明20个变量，非常消耗内存

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#spanTxt{
+		width:100px;
+		height:20px;
+		display:inline-block;
+		border:1px solid yellow;
+		letter-spacing:5px;
+		cursor:pointer;
+		/* 鼠标换成小手 */
+	}
+	#mess{
+		width:160px;
+		height:20px;
+		display:inline-block;
+		border:1px solid #ccc;
+	}
+	</style>
+</head>
+<body>
+	<form action="">
+		验证码：<input type="text" name = "verify">
+		<span id ="spanTxt" title="点击刷新验证码" onclick="createYzm()"></span>
+		<font id ="mess"></font>
+	</form>
+
+
+	<script>
+	//获取标签元素
+	var input_obj = document.querySelector('input[name=verify]');
+	var span_obj = document.getElementById("spanTxt");
+	var font_obj = document.getElementById("mess");
+	console.log(input_obj,span_obj,font_obj);
+
+	
+	//随机生成一个验证码 【有数字，有字母，有中文】 4 位  
+	//随机数：Math.random()  0~1之间的随机小数
+	//在页面上看到验证码
+			//存储字符库
+			var arr = [0,1,2,3,4,5,6,7,8,9,"a","b","J","c","G","m","吕","长","杰"];
+			//随机从字符库里抽取四个字符出来，组成验证码
+			// console.log(arr.length);
+			//先得到随机下标0-18
+			//再去取值
+			function createYzm(){
+				var verify = ""; //声明验证码
+				for(var i = 0;i<4;i++){
+					var index = Math.floor(Math.random()*19);
+					verify += String(arr[index]) ;
+				}
+				span_obj.innerText=verify;
+			}
+			createYzm();
+			//输入框验证功能:
+			input_obj.onblur = function(){
+				console.log(input_obj.value.toUpperCase());
+				console.log(span_obj.innerText.toUpperCase());
+				//失去焦点的时候开始验证
+				if(input_obj.value.toUpperCase() == span_obj.innerText.toUpperCase()){
+					font_obj.innerText = "验证成功！";
+				}else{
+					font_obj.innerText = "验证失败！";
+				}
+			}
+			
+
+	</script>
+</body>
+</html>

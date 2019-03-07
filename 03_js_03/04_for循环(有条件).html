@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	/*
+	1)输出1-20之间的数
+		要求：偶数变成红色  奇数是蓝色的
+	 */
+	
+	for(var i=1;i<21;i++){
+		if(i%2==0){
+			document.write("<font color='red'>"+i+"</font><br>");
+		}else{
+			document.write("<font color='blue'>"+i+"</font><br>");
+		}
+	}
+	/*
+	2)输出1990-2020年之间的闰年
+	闰年：能被4整数单不能被100整除，
+			直接被400整除
+	 */
+	var count = 0;
+	for(var i=1990;i<=2020;i++){
+		if((i % 4 == 0 && 1 % 100 != 0)||i % 400 == 0){
+			document.write(i+"<br>");
+			count++;
+		}
+	}
+	document.write(count)
+	</script>
+</body>
+</html>

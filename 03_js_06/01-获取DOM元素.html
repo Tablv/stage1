@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul class="list" id="list_1">
+		<li id="li_1">体育</li>	
+		<li id="li_2">篮球</li>	
+		<li name='ball'>足球</li>	
+		<li name='ball'>乒乓球</li>	
+		<li>羽毛球</li>	
+	</ul>
+	<ol class="list">
+		<li id="li_1">水果</li>
+		<li id="li_2">榴莲</li>
+		<li>西瓜</li>
+		<li>菠萝</li>
+		<li>香蕉</li>ul
+	</ol>
+	<script>
+	//用JS的方式获取标签元素
+	//1)通过标签名【数组】
+	var ul_obj = document.getElementsByTagName('ul');
+	console.log(ul_obj);//[ul]
+	console.log(ul_obj[0]);//ul标签
+	//2)通过id名(具有唯一性)【直接获取标签】
+	var li_obj1 = document.getElementById('li_1');
+	console.log(li_obj1);//<li id=​"li_1">​体育​</li>​
+	var li_obj2 = document.getElementById('li_2');
+	console.log(li_obj2);//<li id=​"li_2">​篮球</li>​
+	//3)通过class类名【数组】
+	var list_obj = document.getElementsByClassName('list');
+	console.log(list_obj);
+	console.log(list_obj[0]);//ul标签
+	console.log(list_obj[1]);//ol标签
+	//4)通过name属性【数组】
+	var ball_obj = document.getElementsByName('ball');
+	console.log(ball_obj);//[li,li]
+	console.log(ball_obj[0]);//[li,li]//<li name='ball'>足球</li>
+	console.log(ball_obj[1]);//[li,li]//<li name='ball'>乒乓球</li>
+
+	//需求:获取ul里面的li(多个)
+	var ul_obj = document.getElementById('list_1');
+	console.log(ul_obj);//ul标签
+	var li_obj = ul_obj.getElementsByTagName('li');
+	console.log(li_obj);//[li,li,li,li,li]
+
+
+	//获取ol里面的li
+	var ol_li = document.querySelector('ol.list li');//<li id=​"li_1">​水果</li>​
+	var ol_li = document.querySelectorAll('ol.list li');//[li,li,li,li,li]
+	console.log(ol_li);
+
+	</script>
+</body>
+</html>

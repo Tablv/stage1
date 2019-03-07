@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h3>用户信息登记</h3>
+	<form action="index.php">
+	<table border="1" bordercolor="#000" cellspacing="0">
+		<tr>
+			<td>用户名:</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>密码:</td>
+			<td><input type="password"></td>
+		</tr>
+		<tr>
+			<td>性别:</td>
+			<td>
+				<input name="sex" type="radio">男
+				<input name="sex" type="radio">女
+				<input name="sex" type="radio">保密
+			</td>
+		</tr>
+		<tr>
+			<td>爱好:</td>
+			<td>
+				<input name="like" type="checkbox">吃
+				<input name="like" type="checkbox">喝
+				<input name="like" type="checkbox">玩
+			</td>
+		</tr>
+		<tr>
+			<td>证件照:</td>
+			<td>
+				<input type="file">
+			</td>
+		</tr>
+		<tr>
+			<td>籍贯:</td>
+			<td>
+				<select name="hplace" id="">
+					<option value="jiangsu">江苏省</option>
+					<option value="henan">河南省</option>
+					<option value="anhui">安徽省</option>
+					<option value="zhejiang">浙江省</option>
+				</select>
+				<select name="city" id="">
+					<option value="nanjing">南京市</option>
+					<option value="wuxi">无锡市</option>
+					<option value="suqian">宿迁市</option>
+					<option value="suzhou">苏州市</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>自我评价:</td>
+			<td>
+				<textarea name="" id="" cols="30" rows="10"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="提交" >
+			</td>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	[type=text]{
+		border:1px solid red;
+	}
+	[name]{
+		background:pink;
+	}
+	/* 伪选择器（伪元素选择器） */
+	p.article::selection{
+		background:#8F8E0B;
+		color:red;
+	}
+	/* :before(); 伪元素选择器*/
+	p:before{
+		content:"Nihao ";
+		border:1px solid red;
+	}
+	</style>
+</head>
+<body>
+	<input type="text" name="uname"><br>
+	<input type="text" name="unick"><br>
+	<input type="text" name="uadress"><br>
+	<input type="text" name="utel"><br>
+
+	<p class='article'>
+		文你好丰厚阿富汗his的话弄
+		文你好丰厚阿富汗his的话弄
+		文你好丰厚阿富汗his的话弄
+		文你好丰厚阿富汗his的话弄
+		文你好丰厚阿富汗his的话弄
+		文你好丰厚阿富汗his的话弄
+	</p>
+</body>
+</html>

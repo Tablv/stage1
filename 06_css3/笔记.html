@@ -1,0 +1,84 @@
+第六章 CSS3
+一 CSS扩展了新的功能
+	1）选择器
+		*属性选择器
+		[属性名]{}
+		[属性名 ~= 值]{} 含有该‘值’得属性
+		没事看看w3c
+		*伪元素选择器更新
+		:before{}
+		::before
+		区分开了伪元素选择器与伪选择器
+	2）样式
+		1.圆角样式
+		border-radius:上右下左;
+		<!-- 可以整出来圆角矩形  圆形 -->
+		2.投影
+		box-shadow: 水平偏移  垂直偏移  模糊度 扩展值  颜色 位置（inset：内部）
+
+		h-shadow 必需。水平阴影的位置。允许负值。 
+		v-shadow 必需。垂直阴影的位置。允许负值。 
+		blur 可选。模糊距离。  值越大越模糊
+		spread 可选。阴影的尺寸。 
+		color 可选。阴影的颜色。请参阅 CSS 颜色值。 
+		inset 可选。将外部阴影 (outset) 改为内部阴影。 
+		
+		3.文字投影
+
+		text-shadow: 水平  垂直 模糊度  颜色
+
+		h-shadow 必需。水平阴影的位置。允许负值。 
+		v-shadow 必需。垂直阴影的位置。允许负值。 
+		blur 可选。模糊的距离。 
+		color 可选。阴影的颜色。参阅 CSS 颜色值。 
+
+		4.自由变换
+		transform:
+
+		matrix(n,n,n,n,n,n) 定义 2D 转换，使用六个值的矩阵。 
+		translate(x,y) 定义 2D 转换，沿着 X 和 Y 轴移动元素。 
+		translateX(n) 定义 2D 转换，沿着 X 轴移动元素。 
+		translateY(n) 定义 2D 转换，沿着 Y 轴移动元素。 
+		scale(x,y) 定义 2D 缩放转换，改变元素的宽度和高度。 
+		scaleX(n) 定义 2D 缩放转换，改变元素的宽度。 
+		scaleY(n) 定义 2D 缩放转换，改变元素的高度。 
+		rotate(angle) 定义 2D 旋转，在参数中规定角度。 
+		skew(x-angle,y-angle) 定义 2D 倾斜转换，沿着 X 和 Y 轴。 
+		skewX(angle) 定义 2D 倾斜转换，沿着 X 轴。 
+		skewY(angle) 定义 2D 倾斜转换，沿着 Y 轴 
+
+		方法：
+		通过 translate() 方法，元素从其当前位置移动，根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数：
+		translate()  
+		rotate() 
+		scale() 
+		skew() 
+		matrix() 
+
+		<style>
+
+		/* 变换  translate 位移 */
+		transform:translate(20px,20px);
+		/* 变换  rotate  旋转 */
+		/* 单位 deg */
+		transform:rotate(360deg);
+		/* 变换  scale */
+		/* 宽度的缩放  高度的缩放 */
+		transform:scale(0.5);
+		</style>
+
+		5.过渡
+		transition
+		transition 简写属性，用于在一个属性中设置四个过渡属性。
+		transition-property 规定应用过渡的 CSS 属性的名称。
+		transition-duration 定义过渡效果花费的时间。默认是 0。
+		transition-timing-function 规定过渡效果的时间曲线。默认是 "ease"。
+		transition-delay 规定过渡效果何时开始。默认是 0。 
+		<style>
+		/* 添加过渡效果  看到变换过程 */
+		/* 单位秒 */
+		transition:1s;
+
+		</style>
+		
+ 

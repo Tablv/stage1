@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>套件判断语句</title>
+</head>
+<body>
+	<script>
+	/*
+	需求1：输入用户名
+	条件1：不能为空
+	条件2：不能超过11个字符
+	条件3：不能包含特殊符号@，#
+
+	 */
+
+
+
+	var uname=prompt("请输入你的用户名：");
+	console.log(uname);
+	if(uname == ""){
+		console.log("用户名不能为空");
+	}else if(uname.length > 11){
+		console.log("用户名长度不能超过11个字符");
+	}else if(uname.indexOf("@") != -1 || uname.indexOf("@") != -1){
+		console.log("用户名不能包含特殊字符@，#");
+	}else{
+		console.log("用户名可以使用！")
+	}
+
+	</script>
+</body>
+</html>

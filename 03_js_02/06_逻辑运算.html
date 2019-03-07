@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var uname = "lcj";
+	var sex = "男";
+	var age = 18;
+
+	//要求:
+	//用户名不能超过10个长度
+	//年龄必须大于15岁
+	console.log(uname.length<10 && age>15);//true
+
+	//要求：
+	//性别可以是男 也可以是女
+	console.log(sex=="男"||sex=="女");
+
+
+	console.log(!true);//false
+
+
+	var rs = 10-5  && 7-5 && 5+2 && 7-5 && 3 && true
+	console.log(rs) ;  //3
+	//说明：右边等式执行完成之后，将值赋值给左边
+	//10-5  && 7-5 && 5+2 && 7-5 && 3 结果为3
+	//并且AND运算，会顺序执行，有一个通过就顺序执行下去，直到最后一个为true的结果返回
+	//10-5  && 7-5 && 5+2 && 7-5 && 3 & true 结果为true
+	//
+	
+	console.log(Boolean(7)); //true
+
+	console.log(4 == true); //false 
+	//为什么比较会是false
+	//因为两个值比较，其中一个是boolean类型，另一个是number，
+	//比较时，是boolean类型进行转换。false转成0，true转成1
+
+
+
+	var rs = 4 && false;
+	console.log(rs);  //false
+	var rs = false && 12;
+	console.log(rs);  //false
+	var rs = true && 12;
+	console.log(rs); //12
+	var rs = 10-2 && 1+5 && 5-4 &&4-2 && true;
+	console.log(rs); //true
+	var rs = true && true;
+	console.log(rs); //true
+	var rs = 5 && 2;
+	console.log(rs); //2
+	
+
+	console.log(true && 12);  //12
+
+
+	</script>
+
+</body>
+</html>

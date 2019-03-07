@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="index.php">
+		用户名<input type="text" name="uname" required pattern="[A-z0-9]{6,12}"><br>
+		手机号<input type="text" name="utel" required pattern="1[3456789][0-9]{9}"><br>
+		邮箱 <input type="email" name="email" required pattern="[0-9A-z_]{4,8}@(qq|163|126).com"><br>
+		网址 <input type="url" name="url" required pattern='(http|https)//www.[a-z]{3,10}.c(on|n)'><br>
+		<input type="submit">
+	</form>
+</body>
+</html>

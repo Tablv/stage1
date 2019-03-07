@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组方法</title>
+</head>
+<body>
+	<script>
+	//定义一个数组
+	var student = ['李白','吕布','貂蝉','张飞','大乔'];
+	//查找元素（找人） arr.indexOf('谁');
+	console.log(student.indexOf('吕布'));//1
+	console.log(student.indexOf('大乔'));//4
+	console.log(student.indexOf('项羽'));//-1
+	console.log(student.indexOf('小乔'));//-1
+	console.log(student.lastIndexOf('项羽'));//-1
+	console.log(student.lastIndexOf('小乔'));//-1
+	
+	/*
+	结果：
+	如果找到了，返回元素的下标
+	否则，没找到，返回-1
+	 */
+	
+
+
+	// 案例：提供一个输入框，输入你的注册用户名
+	// 要求：不能使用已经注册过的用户名
+	// 
+	
+	var uname = prompt("请输入你要注册的用户名:");
+		if(student.indexOf(uname) == -1){
+			alert('用户名可以使用，注册成功！');
+			
+		}else{
+			alert("当前用户名已被注册，请重新填写");
+		}
+
+	</script>
+</body>
+</html>

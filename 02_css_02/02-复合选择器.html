@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.list1{
+			width: 400px;
+			border: 1px solid green;
+		}
+
+		/* 父选择器 自选择器 孙子选择器 ... */
+
+		.list1 li{
+			border:1px dotted red;
+		}
+		.list1 ol{
+			list-style: circle;
+		}
+	
+		/* 父选择器>自选择器>孙子选择器>... */
+		.list1>li{
+			border:2px dashed blue;
+		}
+
+
+		/* 兄弟选择器 */
+		.p1 b+font{
+			border:1px solid blue;
+		}
+		/* 无效的 */
+		.p1 b+b{
+			border:1px solid green;
+		}
+
+		.p1 input+font{
+			color: yellow;
+		}
+
+		.p1{
+			width: 400px;
+			border:1px dotted blue;
+		}
+
+		#title1{
+			width:300px;
+			border:1px double red;
+		}
+		.title2{
+			width: 350px;
+			border: 1px dotted green;
+		}
+
+		/* 并集选择器 */
+		.p1,#title1,.title2{
+			text-indent: 2em;
+			background: pink;
+
+		}
+
+		/* 交集选择器 */
+		p#title1{
+			background: skyblue;
+			
+		}
+
+	</style>
+
+</head>
+<body>
+	
+	<ul class="list1">
+		<li>
+			图书
+			<ol>
+				<li>
+					图书1
+				</li>
+				<li>
+					图书2
+				</li>
+			</ol>
+		</li>
+		<li>
+			家电
+			<ol>
+				<li>
+					家电1
+				</li>
+				<li>
+					家电2
+				</li>
+			</ol>
+		</li>
+
+	</ul>
+
+	<p class="p1">
+		<b>加粗</b><font color="red">红色文字</font><b>加粗</b>
+		
+		
+	</p>
+	<p class="p1" id="title1">
+		<input type="text" name="uname">
+		<font>*必填项</font>
+	</p>
+
+	<h1 id="title1">标题一</h1>
+	<h2 class="title2">标题二</h2>
+
+</body>
+</html>

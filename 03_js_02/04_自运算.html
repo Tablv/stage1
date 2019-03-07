@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var num1 = 3;
+	num1++; //num1 = num1 + 1;
+	num1--; //num1 = num1 - 1;
+	++num1; //num1 = num1 + 1;
+	--num1; //num1 = num1 + 1;
+	console.log(num1);
+	for(var num2 = 30; num2 < 40; num2++){
+		console.log(num2);
+	}
+
+	//如果把自运算赋值给了其他的变量
+	//++在后，先赋值，后运算
+	//++在前，先运算，后赋值
+	var num3 = 10;
+	var num4 = 14;
+	num3++;
+	console.log(num3,num4);//11 14
+	var num5 = 20; // num3:11 num4:14 num5:20
+	num5 = num3++; 
+	//num5 = num3;
+	//num3 = num3+1;
+	console.log(num3,num4,num5);//12 14 11
+	num5 = ++num3;
+	//num3 = num3 +1;
+	//num5 = num5;
+	console.log(num3,num4,num5);
+	</script>
+</body>
+</html>

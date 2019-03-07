@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box{
+		width:300px;
+		line-height: 24px;
+		border:1px solid red;
+	}
+	</style>
+	<script src="jq/jquery-1.4.js"></script>
+	<script>
+
+	$(function(){
+		//按钮1 显示
+		$('input[name=btn1]').click(function(){
+			$('.box').show(5000,function(){
+				alert('提示他一下，显示完成');
+			});
+		});
+		//按钮2 隐藏
+		$('input[name=btn2]').click(function(){
+			$('.box').hide(5000);
+		});
+		//按钮3 显示/隐藏切换 toggle()
+		$('input[name=btn3]').click(function(){
+			$('.box').toggle();
+		});
+
+		//按钮4 展开
+		$('input[name=btn4]').click(function(){
+			$('.box').slideDown(1000,function(){
+				alert('提示他一下，显示完成');
+			});
+		});
+		//按钮5 收缩
+		$('input[name=btn5]').click(function(){
+			$('.box').slideUp(1000);
+		});
+		//按钮6 展开/收缩切换 toggle()
+		$('input[name=btn6]').click(function(){
+			$('.box').slideToggle();
+		});
+
+	});
+	</script>
+</head>
+<body>
+	<input type="button" name="btn1" value="显示">
+	<input type="button" name="btn2" value="隐藏">
+	<input type="button" name="btn3" value="切换显示/隐藏">
+	<div class="box">
+		你哈哈方法撒回复你沙发就卡萨减肥开始大家疯狂积分卡手机发空间撒开飞机klj
+		发的说法就是房价会撒娇风很骄傲和房价
+		好久发货撒积分哈哈房间爱护肤及爱好发货
+	</div>
+	<input type="button" name="btn4" value="展开">
+	<input type="button" name="btn5" value="收缩">
+	<input type="button" name="btn6" value="切换展开/收缩">
+</body>
+</html>

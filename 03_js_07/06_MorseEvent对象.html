@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件对象</title>
+</head>
+<body>
+	<p>
+		<a href="#" class="a_1">图书</a>
+		<a href="#">电器</a>
+		<a href="#">家电</a>
+	</p>
+
+
+
+	<script>
+
+	//MouseEvent：鼠标事件对象
+	//鼠标操作会触发   鼠标事件对象
+	//比如 onclick onfocus  onblur onchange
+		
+	var a_1 = document.querySelector(".a_1");
+	console.log(a_1);
+
+	a_1.onclick = function(event){
+		console.log(event); //MouseEvent实体·
+		//参数：event(内置参数) 名字可以自定义  
+		//记录了鼠标操作的相关信息
+		//比如 
+		//event.srcElement  / event.target   --目标标签
+
+		console.log(event.srcElement); //<a href="#" class="a_1">图书</a>
+		console.log(event.target); //<a href="#" class="a_1">图书</a>
+		console.log(this);  //<a href="#" class="a_1">图书</a>
+
+		//this 关键字，是一个指针：指向调用函数的对象
+
+		console.log(whate);
+	}
+
+	var bb = function(event){
+		console.log(event);//undefined
+	}
+	bb();
+	</script>
+</body>
+</html>

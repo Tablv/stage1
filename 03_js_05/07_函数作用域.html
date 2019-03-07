@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数作用域</title>
+</head>
+<body>
+	<script>
+	//函数作用域
+	//fun1  全局函数
+	function fun1(){
+		console.log('函数1');
+		//局部函数  只能在内部进行访问
+		function fun2(){
+			console.log('函数2');
+		}
+		fun2();
+	}
+
+	fun1();
+	// fun2();
+
+	function fun3(){
+		fun1();
+	}
+	fun3();
+	</script>
+</body>
+</html>

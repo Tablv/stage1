@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li>用户名:xxx</li>
+		<li>性别:xx</li>
+		<li>生日:xx</li>
+		<li>籍贯:xx省</li>
+	</ul>
+	<script>
+		//动态获取四条信息:用户名、性别、生日、籍贯
+		var uname=prompt("请输入用户名");
+		var usex=prompt("请输入性别");
+		var birth=prompt("请输入生日");
+		var address=prompt("请输入籍贯");
+		console.log(uname,usex,birth,address);
+		document.write("<ul><li>用户名:",uname,"</li><li>性别:"+usex+"</li><li>生日:"+birth+"</li><li>籍贯:"+address+"</li></ul>")
+
+	</script>
+</body>
+</html>

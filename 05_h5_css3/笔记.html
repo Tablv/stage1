@@ -1,0 +1,118 @@
+第五章 HTML5 + CSS3
+一。
+web1.0：文本图片展示为主
+web2.0: 主要以js jq交互功能为主
+web3.0：富客户端发展
+
+HTML5改革：
+1.语义化标签
+	-结构标签：同div（块元素）
+	1)header:头部区域
+	2)article:文章段落
+	3)footer:底部区域
+	优点：语义化明确，更便于浏览器识别，以后的发展趋势
+
+	效果标签
+	1）meter（度量尺/百分比）
+		value 默认值
+		min   最小值
+		max   最大值
+		low   低预警值
+		high  高预警值
+		optimum  最优值（最佳理想值）
+	颜色划分：
+		optimum所在区间为绿色
+		离optimum越远的区间颜色逐渐为黄色   红色
+		最远的为红色，中间的为黄色
+
+	2) progress 
+		value 默认值
+		max   最大值
+2.新增了form控件
+	old:text,pasword,radio,checkbox...
+	新增控件：（移动端支持性最好）
+	type属性的值：
+	1）时间：date、time、datetime、week、month
+	2）数值：number
+		属性：
+		min  最小值
+		max  最大值
+	3）颜色：color
+	4）网址：url 会自动检测是否是http或者https开头
+	5）邮箱：email 会检测是否有@
+
+	属性
+	1）placeholder = "提示文字"
+	2）autofocus = "autofocus" 自动获得焦点
+	3）required = "required"  必填项
+	4）pattern = '正则表达式'
+
+正则表达式：js的内容
+	什么是正则表达式？
+		就是一个带有"检索"功能的’字符串‘；
+	为什么要用正则表达式？
+		自定义检索要求是，就要使用正则
+	譬如：验证手机号
+		邮箱（xxx@126.com/xxx@163.com/xxx@qq.com）
+	怎么使用
+	1.定义正则对象
+	<script>
+	//正则表达式
+	var pattern = /[正则]/;
+	//转成正则对象
+	var reg = new RegExp(pattern);
+	</script>
+	2.检验是否符合规范
+	<script>
+	reg.test(string);
+	// 验证成功 true 失败false
+	// 字符串 从左往右一次到正则表达式里验证
+	// 都是true 结果才是 true
+	// 遇到false 结果就是false
+	</script>
+3.引入了多媒体标签（音频、视频）
+	1)音频
+	<audio src="音频地址"></audio>
+	<audio>
+		<source src="音频地址.ogg">
+		<source src="音频地址.mp3">
+		<source src="音频地址.wav">
+	</audio>
+	2)视频
+	<video src="视频地址"></video>
+	<video>
+		<source src="视频地址.ogg">
+		<source src="视频地址.mp4">
+		<source src="视频地址.webM">
+	</video>
+
+
+	*属性
+	1）controls 显示控件（默认）
+	2）autoplay 自动播放
+	3）muted	静音
+	4）loop		循环播放
+	5）poster="视频封面地址"
+
+	3)自定义按钮
+	<script>
+		var btn1 = document.getElementById("btn1");
+		var btn2 = document.getElementById("btn2");
+		var video = document.querySelector("video");
+		//点击按钮1 ，播放视频
+		btn1.onclick = function(){
+			// video.playbackRate = 10;//视频倍速
+			video.play(); //播放
+
+		}
+
+		//点击按钮2 ，暂停视频
+		btn2.onclick = function(){
+			video.pause(); //暂停
+		}
+
+	</script>
+4.增加了一个绘图标签（canvas）
+	本身没有画图功能，提供了一个画布
+	canvas:画布
+	在画布上绘图：使用js操作

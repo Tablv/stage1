@@ -1,0 +1,164 @@
+/* 初始化 */
+*{margin:0;padding:0;}
+html,body{font-family:"微软雅黑";font-size:16px;}
+a{text-decoration:none;}
+ul,li{list-style:none;}
+
+/* 公共类 */
+.autoW{width:1000px;margin:0 auto;}
+.left{float:left;}
+.right{float:right;}
+
+/* 导航条 */
+.head_nav{
+	background:#606060;
+}
+.head_nav .navbox:after{
+	content:" ";
+	display:block;
+	clear:both;
+}
+.head_nav .navbox{
+	/*overflow:hidden; 自适应高度 */
+	line-height:40px;
+	font-size:16px;	
+}
+.head_nav .navbox img{margin-top:8px;}
+.head_nav .navbox .group a{color:#fff;}
+
+.head_nav .navbox .group{
+	text-align:center;
+	position:relative;/* 指定为参照物 */
+}
+.head_nav .navbox .group a{
+	display:block;
+	padding:0 16px;
+}
+/* 一级导航 */
+
+/* 二级导航 */
+.head_nav .navbox .group ul{
+	display:none;
+	background:rgba(0,0,0,0.3);
+	position:absolute;
+	width:100%;
+}
+.head_nav .navbox .group ul a{color:#000;}
+/* 鼠标经过一级，让对应的二级显示出来
+.head_nav .navbox .group>a:hover+ul{
+	display:block;
+}  错误*/
+
+/* 鼠标经过组合，让里面的二级显示出来 */
+.head_nav .navbox .group:hover ul{display:block;z-index:10;}
+.head_nav .navbox .group:hover a{color:#000;}
+.head_nav .navbox .group ul a:hover{color:#fff;}
+
+/* banner区 */
+.bannerBox{
+	/* border:3px solid red; */
+	width:1300px;
+	margin:0 auto;
+	position:relative;
+}
+/* 1)隐藏所有图片*/
+/* .bannerBox .pics{display:none;} */
+/* 2)显示第一张图  */
+.bannerBox .pics img:first-child{
+	display:block;
+}
+
+.bannerBox .btns img{
+	position:absolute;
+	top:50%;
+	margin-top:-40px;
+}
+.bannerBox .btns img:first-child{left:0;}
+.bannerBox .btns img:last-child{right:0;}
+.bannerBox .squares{
+	/* border:1px solid red; */
+	position:absolute;
+	bottom:10px;
+	/* left:50%;
+	margin-left:-60px; */
+	width:100%;
+	text-align:center;
+}
+.bannerBox .squares span{
+	display:inline-block;
+	width:14px;
+	height:14px;
+	background-color:#ddd; 
+	margin:0 4px;
+}
+.bannerBox .squares .current{
+	background:#000;
+}
+.con{
+	overflow:hidden;
+	margin-top:20px;
+}
+.con .con_left{
+	width:280px;
+	height:380px;
+	text-align:center;
+	float:left;
+	margin-left:40px;
+}
+.con .con_left h3 a{color:#551A8B;}
+.con .con_left p{width:260px;margin:0 auto;}
+/* 左侧 */
+.images{overflow:hidden;margin-top:30px;}
+.images img{display:block;}
+.images .col_1{
+	width:364px;
+}
+/* 右侧 */
+.images .col_2{
+	width:636px;
+}
+.images .item{
+	position:relative;
+}
+/* 第二章彩色图放在第一张图片上 */
+.images .item img:last-child{
+	position:absolute;
+	left:0;top:0;
+	display:none;
+}
+.images .item:hover img:last-child{
+	display:block;
+}
+
+.change{
+	text-align:center;
+	margin-top:50px;
+}
+.change h3 a{line-height:50px;}
+.contact{
+	width:220px;
+	/* border:1px solid red; */
+	margin-top:70px;
+	overflow:hidden;
+}
+.contact img{
+	margin-left:5px;
+}
+.contact .cont_1{
+	position:relative;
+	float:left;
+	text-align:center;
+}
+.contact .cont_1 .hidden{
+	display:none;
+	position:absolute;
+	left:0;top:0;
+}
+.contact .cont_1:hover .hidden{
+	display:block;
+}
+.contact .img1{
+	margin-left:70px;
+}
+.line{height:2px;background-color:#aaa;margin-top:50px;}
+.bottom{line-height:80px;text-align:center;}

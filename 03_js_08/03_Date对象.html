@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	//Date对象:
+	var taday = new Date();
+	console.log(taday,typeof(taday));  //打印的当前本地计算机打开的时间
+	//Fri Jan 11 2019 11:44:44 GMT+0800 (中国标准时间) "object"
+	//周五 1月 11号 2019 年  11时44分44秒 时区(东八区)   object类型
+	
+	console.log(taday.getDate()); //11  从 Date 对象返回一个月中的某一天 (1 ~ 31)
+	var day = taday.getDate();
+	console.log(taday.getMonth()); //0 从 Date 对象返回月份 (0 ~ 11)对应1-12月
+	var month = taday.getMonth();
+	console.log(taday.getYear()); //119 请使用 getFullYear() 方法代替。
+	
+	console.log(taday.getFullYear());// 2019 从 Date 对象以四位数字返回年份。
+	var year = taday.getYear();
+	console.log(taday.getDay()); //5 从 Date 对象返回一周中的某一天 (0 ~ 6) 对应 【日-6】
+	var week = taday.getDay();
+	console.log(taday.getHours());    //时
+	var h = taday.getHours();
+	if(h<10){ h = '0' + h}
+	console.log(taday.getMinutes());  //分
+	var m = taday.getMinutes();
+	if(m<10){ m = '0' + m}
+	console.log(taday.getSeconds());  //秒
+	var s = taday.getSeconds();
+	// if(s<10){ s = '0' + s}
+	s<10?s = '0' + s:s;
+
+	var arr = ['日','一','二','三','四','五','六']; 
+
+	//格式：xxxx年xx月xx日 周几 xx:xx:xx
+	var str = taday.getFullYear()+"年"+(taday.getMonth()+1)+"月"+taday.getDate()+"日 周"+arr[taday.getDay()]+" "+taday.getHours()+":"+taday.getMinutes()+":"+s;
+	console.log(str);
+	document.write(str);
+
+	//三目运算符  条件?true:false;
+	//条件?true的结果:false的结果
+	var num = 6;
+	// if(num<10){num = '0' + num}
+	num < 10 ? num = '0' + num :num ;
+	console.log(num);
+	</script>
+</body>
+</html>

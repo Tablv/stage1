@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>属性操作练习</title>
+</head>
+<body>
+	<p class="p">
+		<a href="#">足球</a>
+		<a href="#">篮球</a>
+		<a href="#">体育</a>
+		<a href="#">乒乓球</a>
+		<a href="#">羽毛球</a>
+	</p>
+	<script>
+	//需求
+	//文字居中
+	//给每个链接文字加一个描述信息(title)
+	// 爱好 1， 爱好2，
+	
+	//获取标签
+	var p_obj = document.querySelector(".p");
+	console.log(p_obj);
+	//修改属性
+	p_obj.setAttribute("align","center");
+
+	var a_obj_list = document.querySelectorAll(".p a");
+	console.log(a_obj_list);
+	for(var i in a_obj_list){
+		console.log(a_obj_list[i]);
+		a_obj_list[i].title = "爱好"+(Number(i)+1);
+	}
+
+
+
+	</script>
+</body>
+</html>

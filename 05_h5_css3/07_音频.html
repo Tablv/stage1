@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 音频 -->
+	<audio  controls src="images/Kalimba.mp3"></audio><br>
+	<!-- 视频 -->
+	<video controls src="images/oceans-clip.mp4" poster="images/oceans-clip.png"></video>
+
+	<!-- 自定义控件 -->
+	<input type="button" value="播放" id="btn1">
+	<input type="button" value="暂停" id="btn2">
+
+
+	<script>
+	var btn1 = document.getElementById("btn1");
+	var btn2 = document.getElementById("btn2");
+	var video = document.querySelector("video");
+	//点击按钮1 ，播放视频
+	btn1.onclick = function(){
+		// video.playbackRate = 10;
+		video.play();
+
+	}
+
+	//点击按钮2 ，暂停视频
+	btn2.onclick = function(){
+		video.pause();
+	}
+
+	</script>
+</body>
+</html>

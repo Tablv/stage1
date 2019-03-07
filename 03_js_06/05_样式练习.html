@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin:0; padding:0;}
+	.box{
+		width:300px;
+		border:1px solid red;
+	}
+	.box .list{
+		border:1px solid blue;
+	}
+	.green{
+		width:300px;
+		height:300px;
+		background:green;
+	}
+	.blue{
+		width:500px;
+		height:500px;
+		background:blue;
+	}
+	.orange{
+		width:900px;
+		height:900px;
+		background:orange;
+	}
+	.first_h3{
+		height:40px;
+		background:#F610D8;
+	}
+	.sed_h3{
+		height:50px;
+		background:#C708F4;
+	}
+	.list_li{
+		border-bottom:1px solid #EF0C28;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="nav">
+		<a href="#">淘宝</a>
+		<a href="#">天猫</a>
+		<a href="#">京东</a>
+		<a href="#">新浪</a>
+		<a href="#">当当</a>
+	</div>
+	<script>
+	//需求：自己修饰导航条，使用行内样式
+	//div 宽 高 边框
+	//a 去下划线  颜色  大小
+	
+	//获取标签信息
+	var nav_obj = document.querySelector(".nav");
+	var a_list_obj = document.querySelectorAll(".nav a");
+	console.log(nav_obj);
+	console.log(a_list_obj);
+
+	//设置样式
+	nav_obj.style = "width:400px;height:50px;border:1px #4BF608 solid;";
+
+	for(var i in a_list_obj){
+		a_list_obj[i].style="text-decoration:none;color:#1C0FE7;font-size:25px;";
+	}
+	</script>
+
+
+	<div class="box">
+		<h3>国内旅游</h3>
+		<ul class="list">
+			<li>海南岛5天4夜</li>
+			<li>刘家村3天3夜</li>
+			<li>东黄岛吃鸡战</li>
+			<li>小小成等吉吉</li>
+			<li>鼓起鼓起鼓起</li>
+		</ul>
+		<input type="button" value="绿色风格" onclick="hGreen()">
+		<input type="button" value="蓝色风格" onclick="hBlue()">
+		<input type="button" value="橘色风格" onclick="hOrange()">
+	</div>
+
+	<script>
+
+	//需求 对class类操作
+	//box  三个风格(绿色 蓝色 橘色)
+	//h3   两个风格（高40/背景色  高50/背景色）
+	//列表  每一行加下边框
+
+	//获取标签信息
+	var box_obj = document.querySelector(".box");
+	var h3_obj = document.querySelector(".box h3");
+	var li_obj = document.querySelectorAll(".list li");
+	console.log(li_obj);
+	h3_obj.className += " " + "first_h3";
+	console.log(h3_obj);
+
+	function liG(name){
+		if(name == "+"){
+			for(var i in li_obj){
+				li_obj[i].classList.add("list_li");
+			}
+		}else{
+			for(var i in li_obj){
+				li_obj[i].classList.remove("list_li");
+			}
+		}
+		
+	}
+
+	function hGreen(){
+		box_obj.className += " " + "green";
+		h3_obj.className += " " + "sed_h3";
+		liG("+");
+	}
+	function hBlue(){
+		box_obj.className += " " + "blue";
+		h3_obj.className += " " + "sed_h3";
+		liG();
+	}
+	function hOrange(){
+		box_obj.className += " " + "orange";
+		h3_obj.className += " " + "sed_h3";
+		liG("+");
+	}
+
+
+	</script>
+</body>
+</html>
